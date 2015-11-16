@@ -9,47 +9,48 @@
       $(document).ready(function(){
 
           $("#btnSubmit").click(function(){
-            var name = $('#option').val(); 
-
-            var optionsEl = $("#added_options");   
-
-            var html = $("#options-table").html()
+            var optionsEl = $("#options-table"); 
+            var name = $("#option").val();   
             
+            var html = $("#added_options").html();
+            $("#dynamic_semantic_reason").text(name);
             optionsEl.append(html);
-
-            }); 
+          }); 
 
       });
 
     </script>
 
-    <table>
+    <table >
       <tr>
         <td>
           <select id="option" width="300" style="width: 300px">
-            <option value="NPOV">NPOV</option>
-            <option value="Clarify">Clarify</option>
-            <option value="Copy Editing">Copy Editing</option>
-            <option value="Add Information">Add Information</option>
+              <option value="NPOV">NPOV</option>
+              <option value="Clarify">Clarify</option>
+              <option value="Copy Editing">Copy Editing</option>
+              <option value="Add Information">Add Information</option>
           </select>
           <button id="btnSubmit" type="button">ADD</button>
         </td>
       </tr>
-      <tr>
-      </tr>
     </table>
 
-  <div id="options-table" style="width:400px;height:200px;line-height:5em;overflow:scroll;padding:5px;">
-  <table >
-    <tr id="added_options">
-    </tr>
+ 
+    <table >
+      <tr id="options-table">
+      </tr>
     </table>
-    <table style="border:1px solid black;">
+    <div id="added_options" style="width:400px;height:200px;line-height:5em;overflow:scroll;padding:5px;">
+    <table id='syn_table' style="border:1px solid black;">
     <tbody>
+      <tr id='dynamic_semantic_reason'>
+      </tr>
       <tr>
         <td>Object</td>
         <td>Operation</td>
-        <td><input class="add_del" type="button" value="Delete" /></td>
+        <td> <button id="del" type="button">Delete</button> </td>
+        
+
       </tr>
       <tr>
         <th>
@@ -67,7 +68,7 @@
               <option value="Modification">Modification</option>
             </select> </td>
         </th>
-        <th><input class="add_add" type="button" value="Add" /></th>
+        <th> <button id="add" type="button">Add</button> </th>
       </tr>
     </tbody>
    </table>
