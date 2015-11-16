@@ -8,6 +8,7 @@
   <body>
     <font face="verdana"></font>
     <script>
+      var optionsNum=0;
       $(document).ready(function(){
         
           $("#btnSubmit").click(function(){
@@ -15,10 +16,40 @@
             var name = $("#option").val();   
             
             var html = $("#added_options").html();
-            $("#dynamic_semantic_reason").text(name);
            
-            optionsEl.append(html);
-            
+            var id = optionsNum+"added_options";
+            optionsEl.append("<table id=\""+id+"\">" +html + "</table>");
+            var newOption = $("#"+id);
+            newOption.find("#dynamic_semantic_reason").text(name);
+
+            newOption.find("#deleteTable").click (
+              function(){
+                $("#"+id).remove();
+              }
+            );
+              
+            newOption.find("#addRow").click (
+              function(){
+                var newOption=$("#"+id);
+                var object = newOption.find("#option_object");
+          var operation = newOption.find("#option_operation");
+          var table = newOption.find("#option_table");
+          
+          var rowButtonId = "rowButton" + table.html().length;
+          var rowId = "row" + table.html().length;
+          var html = '<tr id='+rowId+'><td><FONT FACE="Geneva, Arial" SIZE=2>' + object.val() + '-' + operation.val() + "</FONT></td>";
+          html += '<td><input id='+rowButtonId+' type="button" value = "Delete"></td></tr>';
+          table.append(html);
+          
+          var newRow = newOption.find("#"+rowId);
+          newOption.find("#"+rowButtonId).click(
+            function(){
+              newRow.remove();
+            }
+          );
+              }
+            );
+            optionsNum++;            
           }); 
 
       });
@@ -40,21 +71,20 @@
       </tr>
     </table>
 
-    <div style="width:400px;height:200px;line-height:5em;overflow:scroll;padding:5px;">
-    <table id="options-table">
-      <tr>
+    <div style="width:1000px;height:1000px;line-height:5em;overflow:scroll;padding:5px;">
+    <table>
+      <tr id="options-table">
       </tr>
     </table>
 
     
-    <table id="added_options" style="border:1px solid black;">
-    <tbody>
+    <table id="added_options" style="border:1px solid black;" hidden=true>
       <tr id='dynamic_semantic_reason'></tr>
       <tr>
         <td><FONT FACE="Geneva, Arial" SIZE=3>Object</FONT> </td>
         <td><FONT FACE="Geneva, Arial" SIZE=3>Operation</FONT></td>
         <td> 
-        <input type="button" onclick="Javascript:removeTable(this);" value="Delete" /> 
+        <input id="deleteTable" type="button" value="Delete" /> 
         </td>
       </tr>
 
@@ -74,11 +104,16 @@
               <option value="Modification">Modification</option>
             </select> 
         </td>
-        <td> <input type="button"  id="add" value="Add" onclick="Javascript:addRow()"> </td>
+        <td> <input type="button"  id="addRow" value="Add"> </td>        
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
-    </tbody>
+      <tr>
+        <td>
+          <table id="option_table">
+          </table>
+        </td>
+      </tr>
    </table>
  </div>
 
