@@ -3,76 +3,84 @@
     <script src="http://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/2.1.3/jquery.js"></script>
     <script src="lib/oojs/oojs.jquery.js"></script>
     <script src="lib/oojs-ui/oojs-ui.js"></script>
+    <script type="text/javascript" src="util.js"></script>
   </head>
   <body>
+    <font face="verdana"></font>
     <script>
       $(document).ready(function(){
-
+        
           $("#btnSubmit").click(function(){
             var optionsEl = $("#options-table"); 
             var name = $("#option").val();   
             
             var html = $("#added_options").html();
             $("#dynamic_semantic_reason").text(name);
+           
             optionsEl.append(html);
+            
           }); 
 
       });
 
+      
     </script>
 
     <table >
       <tr>
         <td>
           <select id="option" width="300" style="width: 300px">
-              <option value="NPOV">NPOV</option>
-              <option value="Clarify">Clarify</option>
-              <option value="Copy Editing">Copy Editing</option>
-              <option value="Add Information">Add Information</option>
+              <option value="NPOV"><FONT FACE="Geneva, Arial" SIZE=3>NPOV</FONT></option>
+              <option value="Clarify"><FONT FACE="Geneva, Arial" SIZE=3>Clarify</FONT></option>
+              <option value="Copy Editing"><FONT FACE="Geneva, Arial" SIZE=3>Copy Editing</FONT></option>
+              <option value="Add Information"><FONT FACE="Geneva, Arial" SIZE=3>Add Information</FONT></option>
           </select>
           <button id="btnSubmit" type="button">ADD</button>
         </td>
       </tr>
     </table>
 
- 
-    <table >
-      <tr id="options-table">
+    <div style="width:400px;height:200px;line-height:5em;overflow:scroll;padding:5px;">
+    <table id="options-table">
+      <tr>
       </tr>
     </table>
-    <div id="added_options" style="width:400px;height:200px;line-height:5em;overflow:scroll;padding:5px;">
-    <table id='syn_table' style="border:1px solid black;">
-    <tbody>
-      <tr id='dynamic_semantic_reason'>
-      </tr>
-      <tr>
-        <td>Object</td>
-        <td>Operation</td>
-        <td> <button id="del" type="button">Delete</button> </td>
-        
 
-      </tr>
+    
+    <table id="added_options" style="border:1px solid black;">
+    <tbody>
+      <tr id='dynamic_semantic_reason'></tr>
       <tr>
-        <th>
+        <td><FONT FACE="Geneva, Arial" SIZE=3>Object</FONT> </td>
+        <td><FONT FACE="Geneva, Arial" SIZE=3>Operation</FONT></td>
+        <td> 
+        <input type="button" onclick="Javascript:removeTable(this);" value="Delete" /> 
+        </td>
+      </tr>
+
+      <tr>
+        <td>
             <select id="option_object" width="150" style="width: 150px">
               <option value="Template">Template</option>
               <option value="Reference">Reference</option>
               <option value="Information">Information</option>
               <option value="Wikilink">Wikilink</option>
             </select> 
-        </th>
-        <th>
+        </td>
+        <td>
              <select id="option_operation" width="150" style="width: 150px">
               <option value="Insertion">Insertion</option>
               <option value="Deletion">Deletion</option>
               <option value="Modification">Modification</option>
-            </select> </td>
-        </th>
-        <th> <button id="add" type="button">Add</button> </th>
+            </select> 
+        </td>
+        <td> <input type="button"  id="add" value="Add" onclick="Javascript:addRow()"> </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
     </tbody>
    </table>
  </div>
 
-  </body>
+</body>
 </html>
