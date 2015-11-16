@@ -6,11 +6,72 @@
   </head>
   <body>
     <script>
-      // Example of a text input widget
-      var textInput = new OO.ui.TextInputWidget( {
-          value: 'Text input'
-      } )
-      $( 'body' ).append( textInput.$element );
+      $(document).ready(function(){
+
+          $("#btnSubmit").click(function(){
+            var name = $('#option').val(); 
+
+            var optionsEl = $("#added_options");   
+
+            var html = $("#options-table").html()
+            
+            optionsEl.append(html);
+
+            }); 
+
+      });
+
     </script>
+
+    <table>
+      <tr>
+        <td>
+          <select id="option" width="300" style="width: 300px">
+            <option value="NPOV">NPOV</option>
+            <option value="Clarify">Clarify</option>
+            <option value="Copy Editing">Copy Editing</option>
+            <option value="Add Information">Add Information</option>
+          </select>
+          <button id="btnSubmit" type="button">ADD</button>
+        </td>
+      </tr>
+      <tr>
+      </tr>
+    </table>
+
+  <div id="options-table" style="width:400px;height:200px;line-height:5em;overflow:scroll;padding:5px;">
+  <table >
+    <tr id="added_options">
+    </tr>
+    </table>
+    <table style="border:1px solid black;">
+    <tbody>
+      <tr>
+        <td>Object</td>
+        <td>Operation</td>
+        <td><input class="add_del" type="button" value="Delete" /></td>
+      </tr>
+      <tr>
+        <th>
+            <select id="option_object" width="150" style="width: 150px">
+              <option value="Template">Template</option>
+              <option value="Reference">Reference</option>
+              <option value="Information">Information</option>
+              <option value="Wikilink">Wikilink</option>
+            </select> 
+        </th>
+        <th>
+             <select id="option_operation" width="150" style="width: 150px">
+              <option value="Insertion">Insertion</option>
+              <option value="Deletion">Deletion</option>
+              <option value="Modification">Modification</option>
+            </select> </td>
+        </th>
+        <th><input class="add_add" type="button" value="Add" /></th>
+      </tr>
+    </tbody>
+   </table>
+ </div>
+
   </body>
 </html>
