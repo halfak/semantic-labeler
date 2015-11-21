@@ -106,38 +106,54 @@
 
     this.$title = $("<div>").addClass("title").text(label);
 
-    this.object_actions = new ObjectActionSelector({
+    this.objectActions = new ObjectActionSelector({
       objects: objects,
       actions: actions
     });
-    this.$element.append(this.object_actions.$element);
+    this.$element.append(this.objectActions.$element);
 
     this.objectActionMap = {};
     this.$workspace = $("<div>").addClass("workspace");
     this.$element.append(this.$workspace);
   };
-  OO.inheritClass( SyntacticOperationsSelector, OO.ui.Widget );
+  OO.inheritClass( OO.ui.SyntacticOperationsSelector, OO.ui.Widget );
   OO.ui.SyntacticOperationsSelector.prototupe.handleObjectActionAdd = function(){
     //TODO: check if we already have an instance of this object/action pair
     // if we don't, add it to the workspace
-    // and register the close operation
+    var key = objectAction.object + "-" + objectAction.action;
+    if(self.objectActionMap[key] !== undefined){
+      var data = this.objectActions.getData();
+      var soa = SyntacticObjectAction({
+        object: data.object,
+        action: data.action
+      });
+      this.$workspace.append(soa.$element);
+      self.objectActionMap[key] = soa;
+    }else{
+      alert("'" + key + "' has already been added.");
+    }
+
   };
-  OO.ui.SyntacticOperationsSelector.prototupe.handleObjectActionClose = function(object_action){
-    //TODO: remove from objectActionMap
+  OO.ui.SyntacticOperationsSelector.prototupe.handleObjectActionClose = function(soa){
+    //remove from objectActionMap
+    var key = soa.object + "-" + soa.action;
+    delete self.objectActionMap[key];
   };
   OO.ui.SyntacticOperationsSelector.prototupe.handleCloserClick = function(){
-    //TODO: destroy the object and emit an event
+    //destroy the object and emit an event
+    self.$element.remove();
+    self.emit('close', [this]);
   };
 
   OO.ui.SyntacticObjectAction = function(opts){
-    var object = opts.object;
-    var action = opts.action;
+    this.object = opts.object;
+    this.action = opts.action;
 
     this.$element = $("<div>").addClass("object-action");
 
-    this.$object = $("<div>").addClass("object");
+    this.$object = $("<div>").addClass("object").text(this.object);
     this.$element.append(this.$object);
-    this.$action = $("<div>").addClass("object");
+    this.$action = $("<div>").addClass("object").text(this.action);
     this.$element.append(this.$action);
 
     this.closer = new OO.ui.ButtonWidget({label: "X", classes: ["closer"]});
@@ -146,6 +162,8 @@
   };
   OO.ui.SyntacticObjectAction.prototype.handleCloserClick = function(){
     // TODO: Destroy self and emit an event
+    self.$element.remove();
+    self.emit('close', [this]);
   };
 
 })(jQuery, OO);
