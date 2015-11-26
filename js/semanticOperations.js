@@ -6,6 +6,7 @@
    */
   OO.ui.SemanticOperationsSelector = function(opts){
     OO.ui.SemanticOperationsSelector.super.apply( this );
+    var meaningsLabel = opts.meaningsLabel;
     var meanings = opts.meanings;
     this.objects = opts.objects;
     this.actions = opts.actions;
@@ -13,6 +14,7 @@
     this.$element = $("<div>").addClass("semantic-operations-selector");
 
     this.semanticMeanings = new OO.ui.SemanticMeaningSelector({
+      label: meaningsLabel,
       meanings: meanings
     });
     this.semanticMeanings.on("add", this.handleSemanticMeaningAdd.bind(this));
@@ -33,7 +35,7 @@
       throw "Meaning " + meaning + " already selected";
     }else{
       var operationsSelector = new OO.ui.SyntacticOperationsSelector({
-        label: meaning,
+        meaning: meaning,
         objects: this.objects,
         actions: this.actions
       });
@@ -44,8 +46,9 @@
 
     this.semanticMeanings.reset();
   };
-  OO.ui.SemanticOperationsSelector.prototype.handleCloseSelector = function(){
-    //TODO: remove the select from semanticMap
+  OO.ui.SemanticOperationsSelector.prototype.handleCloseSelector = function(sos){
+    //remove the select from semanticMap
+    delete this.semanticMap[sos.meaning];
   };
 
   /**
@@ -57,7 +60,6 @@
 
     var label = opts.label;
     var meanings = opts.meanings;
-    var button_label = opts.button_label;
 
     this.$element = $("<div>").addClass("semantic-meaning-selector");
 
@@ -72,13 +74,15 @@
 
     this.dropdown = new OO.ui.DropdownWidget( {
       label: label,
-      menu: {items: items}
+      menu: {items: items},
+      classes: ['meanings']
     } );
     this.$element.append(this.dropdown.$element);
 
     this.button = new OO.ui.ButtonWidget( {
-        label: button_label,
-        icon: 'add'
+        flags: ['constructive'],
+        icon: 'add',
+        classes: ['add']
     } );
     this.$element.append(this.button.$element);
     this.button.on('click', this.handleButtonClick.bind(this));
@@ -102,17 +106,22 @@
    */
   OO.ui.SyntacticOperationsSelector = function(opts){
     OO.ui.SyntacticOperationsSelector.super.apply( this );
-    var label = opts.label;
+    this.meaning = opts.meaning;
     var objects = opts.objects;
     var actions = opts.actions;
 
     this.$element = $("<div>").addClass("syntactic-operations-selector");
 
-    this.closer = new OO.ui.ButtonWidget({label: "X", classes: ["closer"]});
+    this.closer = new OO.ui.ButtonWidget({
+      icon: "close",
+      flags: ['destructive'],
+      classes: ["closer"]
+    });
     this.$element.append(this.closer.$element);
     this.closer.on('click', this.handleCloserClick.bind(this));
 
-    this.$title = $("<div>").addClass("title").text(label);
+    this.$title = $("<div>").addClass("title").text(this.meaning);
+    this.$element.append(this.$title);
 
     this.objectActions = new OO.ui.ObjectActionSelector({
       objects: objects,
@@ -131,12 +140,13 @@
     // if we don't, add it to the workspace
     var objectAction = this.objectActions.getData();
     var key = objectAction.object + "-" + objectAction.action;
-    if(this.objectActionMap[key] !== undefined){
+    if(this.objectActionMap[key] === undefined){
       var data = this.objectActions.getData();
-      var soa = SyntacticObjectAction({
+      var soa = new OO.ui.SyntacticObjectAction({
         object: data.object,
         action: data.action
       });
+      soa.on('close', this.handleObjectActionClose.bind(this));
       this.$workspace.append(soa.$element);
       this.objectActionMap[key] = soa;
     }else{
@@ -152,7 +162,7 @@
   OO.ui.SyntacticOperationsSelector.prototype.handleCloserClick = function(){
     //destroy the object and emit an event
     this.$element.remove();
-    this.emit('close', [this]);
+    this.emit('close', this);
   };
 
   OO.ui.ObjectActionSelector = function(opts){
@@ -174,7 +184,8 @@
 
     this.objects = new OO.ui.DropdownWidget( {
       label: "objects",
-      menu: {items: object_items}
+      menu: {items: object_items},
+      classes: ['objects']
     } );
     this.$element.append(this.objects.$element);
 
@@ -189,14 +200,17 @@
 
     this.actions = new OO.ui.DropdownWidget( {
       label: "actions",
-      menu: {items: action_items}
+      menu: {items: action_items},
+      classes: ['actions']
     } );
     this.$element.append(this.actions.$element);
 
     // Add button
     this.button = new OO.ui.ButtonWidget( {
         label: button_label,
-        icon: 'add'
+        icon: 'add',
+        flags: ['constructive'],
+        classes: ['add']
     } );
     this.$element.append(this.button.$element);
     this.button.on('click', this.handleButtonClick.bind(this));
@@ -224,7 +238,11 @@
     this.$action = $("<div>").addClass("action").text(this.action);
     this.$element.append(this.$action);
 
-    this.closer = new OO.ui.ButtonWidget({label: "X", classes: ["closer"]});
+    this.closer = new OO.ui.ButtonWidget({
+      icon: "close",
+      flags: ['destrucive'],
+      classes: ["closer"]
+    });
     this.$element.append(this.closer.$element);
     this.closer.on('click', this.handleCloserClick.bind(this));
   };
@@ -232,7 +250,7 @@
   OO.ui.SyntacticObjectAction.prototype.handleCloserClick = function(){
     // TODO: Destroy this and emit an event
     this.$element.remove();
-    this.emit('close', [this]);
+    this.emit('close', this);
   };
 
 })(jQuery, OO);
