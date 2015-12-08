@@ -1,19 +1,13 @@
 /*!
- * OOjs UI v0.9.7
+ * OOjs UI v0.14.0
  * https://www.mediawiki.org/wiki/OOjs_UI
  *
- * Copyright 2011–2015 OOjs Team and other contributors.
+ * Copyright 2011–2015 OOjs UI Team and other contributors.
  * Released under the MIT license
  * http://oojs.mit-license.org
  *
- * Date: 2015-04-03T21:10:27Z
+ * Date: 2015-11-25T01:06:55Z
  */
-.oo-ui-progressBarWidget-slide-frames from {
-	margin-left: -40%;
-}
-.oo-ui-progressBarWidget-slide-frames to {
-	margin-left: 100%;
-}
 @-webkit-keyframes oo-ui-progressBarWidget-slide {
 	from {
 		margin-left: -40%;
@@ -88,8 +82,6 @@
 .oo-ui-buttonElement.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
 	display: inline-block;
 	vertical-align: middle;
-	background-position: center center;
-	background-repeat: no-repeat;
 }
 .oo-ui-buttonElement-frameless {
 	display: inline-block;
@@ -131,10 +123,6 @@
 	width: 1.875em;
 	height: 1.875em;
 }
-.oo-ui-buttonElement-frameless > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
-	/* Don't animate opacities for now, causes wiggling in Chrome (bug 63020) */
-	/*.oo-ui-transition(opacity 200ms);*/
-}
 .oo-ui-buttonElement-frameless > .oo-ui-buttonElement-button:hover,
 .oo-ui-buttonElement-frameless > .oo-ui-buttonElement-button:focus {
 	outline: none;
@@ -153,6 +141,14 @@
 .oo-ui-buttonElement-frameless.oo-ui-labelElement > .oo-ui-buttonElement-button > .oo-ui-labelElement-label {
 	margin-left: 0.25em;
 }
+.oo-ui-buttonElement-frameless > input.oo-ui-buttonElement-button {
+	padding-left: 0.25em;
+	color: #333333;
+}
+.oo-ui-buttonElement-frameless > input.oo-ui-buttonElement-button:hover,
+.oo-ui-buttonElement-frameless > input.oo-ui-buttonElement-button:focus {
+	color: #000000;
+}
 .oo-ui-buttonElement-frameless.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button > .oo-ui-labelElement-label {
 	color: #087ecc;
 }
@@ -169,24 +165,20 @@
 	color: #cccccc;
 }
 .oo-ui-buttonElement-framed > .oo-ui-buttonElement-button {
-	margin: 0.1em 0;
 	padding: 0.2em 0.8em;
 	border-radius: 0.3em;
 	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 	border: 1px #c9c9c9 solid;
-	-webkit-transition: border-color 100ms ease-in-out;
-	   -moz-transition: border-color 100ms ease-in-out;
-	    -ms-transition: border-color 100ms ease-in-out;
-	     -o-transition: border-color 100ms ease-in-out;
-	        transition: border-color 100ms ease-in-out;
+	-webkit-transition: border-color 100ms ease;
+	   -moz-transition: border-color 100ms ease;
+	        transition: border-color 100ms ease;
 	background: #eeeeee;
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#ffffff', endColorstr='#dddddd');
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
 	background-image: -webkit-linear-gradient(top, #ffffff 0%, #dddddd 100%);
 	background-image:    -moz-linear-gradient(top, #ffffff 0%, #dddddd 100%);
-	background-image:     -ms-linear-gradient(top, #ffffff 0%, #dddddd 100%);
 	background-image:      -o-linear-gradient(top, #ffffff 0%, #dddddd 100%);
-	background-image:         linear-gradient(top, #ffffff 0%, #dddddd 100%);
+	background-image:         linear-gradient(to bottom, #ffffff 0%, #dddddd 100%);
 }
 .oo-ui-buttonElement-framed > .oo-ui-buttonElement-button:hover,
 .oo-ui-buttonElement-framed > .oo-ui-buttonElement-button:focus {
@@ -208,9 +200,8 @@
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #dddddd), color-stop(100%, #ffffff));
 	background-image: -webkit-linear-gradient(top, #dddddd 0%, #ffffff 100%);
 	background-image:    -moz-linear-gradient(top, #dddddd 0%, #ffffff 100%);
-	background-image:     -ms-linear-gradient(top, #dddddd 0%, #ffffff 100%);
 	background-image:      -o-linear-gradient(top, #dddddd 0%, #ffffff 100%);
-	background-image:         linear-gradient(top, #dddddd 0%, #ffffff 100%);
+	background-image:         linear-gradient(to bottom, #dddddd 0%, #ffffff 100%);
 }
 .oo-ui-buttonElement-framed.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
 	margin-left: -0.5em;
@@ -220,7 +211,6 @@
 	margin-right: 0.3em;
 }
 .oo-ui-buttonElement-framed.oo-ui-indicatorElement > .oo-ui-buttonElement-button > .oo-ui-indicatorElement-indicator {
-	/* -0.5 - 0.475 */
 	margin-left: -0.005em;
 	margin-right: -0.005em;
 }
@@ -236,9 +226,8 @@
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #eaf4fa), color-stop(100%, #b0d9ee));
 	background-image: -webkit-linear-gradient(top, #eaf4fa 0%, #b0d9ee 100%);
 	background-image:    -moz-linear-gradient(top, #eaf4fa 0%, #b0d9ee 100%);
-	background-image:     -ms-linear-gradient(top, #eaf4fa 0%, #b0d9ee 100%);
 	background-image:      -o-linear-gradient(top, #eaf4fa 0%, #b0d9ee 100%);
-	background-image:         linear-gradient(top, #eaf4fa 0%, #b0d9ee 100%);
+	background-image:         linear-gradient(to bottom, #eaf4fa 0%, #b0d9ee 100%);
 }
 .oo-ui-buttonElement-framed.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:hover,
 .oo-ui-buttonElement-framed.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:focus {
@@ -253,9 +242,8 @@
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #b0d9ee), color-stop(100%, #eaf4fa));
 	background-image: -webkit-linear-gradient(top, #b0d9ee 0%, #eaf4fa 100%);
 	background-image:    -moz-linear-gradient(top, #b0d9ee 0%, #eaf4fa 100%);
-	background-image:     -ms-linear-gradient(top, #b0d9ee 0%, #eaf4fa 100%);
 	background-image:      -o-linear-gradient(top, #b0d9ee 0%, #eaf4fa 100%);
-	background-image:         linear-gradient(top, #b0d9ee 0%, #eaf4fa 100%);
+	background-image:         linear-gradient(to bottom, #b0d9ee 0%, #eaf4fa 100%);
 }
 .oo-ui-buttonElement-framed.oo-ui-flaggedElement-constructive > .oo-ui-buttonElement-button {
 	border: 1px solid #b8d892;
@@ -264,9 +252,8 @@
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #f0fbe1), color-stop(100%, #c3e59a));
 	background-image: -webkit-linear-gradient(top, #f0fbe1 0%, #c3e59a 100%);
 	background-image:    -moz-linear-gradient(top, #f0fbe1 0%, #c3e59a 100%);
-	background-image:     -ms-linear-gradient(top, #f0fbe1 0%, #c3e59a 100%);
 	background-image:      -o-linear-gradient(top, #f0fbe1 0%, #c3e59a 100%);
-	background-image:         linear-gradient(top, #f0fbe1 0%, #c3e59a 100%);
+	background-image:         linear-gradient(to bottom, #f0fbe1 0%, #c3e59a 100%);
 }
 .oo-ui-buttonElement-framed.oo-ui-flaggedElement-constructive > .oo-ui-buttonElement-button:hover,
 .oo-ui-buttonElement-framed.oo-ui-flaggedElement-constructive > .oo-ui-buttonElement-button:focus {
@@ -281,9 +268,8 @@
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #c3e59a), color-stop(100%, #f0fbe1));
 	background-image: -webkit-linear-gradient(top, #c3e59a 0%, #f0fbe1 100%);
 	background-image:    -moz-linear-gradient(top, #c3e59a 0%, #f0fbe1 100%);
-	background-image:     -ms-linear-gradient(top, #c3e59a 0%, #f0fbe1 100%);
 	background-image:      -o-linear-gradient(top, #c3e59a 0%, #f0fbe1 100%);
-	background-image:         linear-gradient(top, #c3e59a 0%, #f0fbe1 100%);
+	background-image:         linear-gradient(to bottom, #c3e59a 0%, #f0fbe1 100%);
 }
 .oo-ui-buttonElement-framed.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button {
 	color: #d45353;
@@ -314,11 +300,6 @@
 }
 .oo-ui-draggableElement {
 	cursor: -webkit-grab -moz-grab, url(images/grab.cur), move;
-	/*
-	 * HACK: In order to style horizontally, we must override
-	 * OO.ui.OptionWidget's display rule that is currently set
-	 * to be 'block'
-	 */
 }
 .oo-ui-draggableElement-dragging {
 	cursor: -webkit-grabbing -moz-grabbing, url(images/grabbing.cur), move;
@@ -335,19 +316,30 @@
 }
 .oo-ui-iconElement .oo-ui-iconElement-icon,
 .oo-ui-iconElement.oo-ui-iconElement-icon {
-	opacity: 0.8;
 	background-size: contain;
 	background-position: center center;
+	background-repeat: no-repeat;
+}
+.oo-ui-iconElement .oo-ui-iconElement-icon,
+.oo-ui-iconElement.oo-ui-iconElement-icon {
+	opacity: 0.8;
+}
+.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator,
+.oo-ui-indicatorElement.oo-ui-indicatorElement-indicator {
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
 }
 .oo-ui-indicatorElement .oo-ui-indicatorElement-indicator,
 .oo-ui-indicatorElement.oo-ui-indicatorElement-indicator {
 	opacity: 0.8;
-	background-size: contain;
-	background-position: center center;
 }
 .oo-ui-lookupElement > .oo-ui-menuSelectWidget {
 	z-index: 1;
 	width: 100%;
+}
+.oo-ui-pendingElement-pending {
+	background-image: /* @embed */ url(themes/apex/images/textures/pending.gif);
 }
 .oo-ui-bookletLayout-stackLayout.oo-ui-stackLayout-continuous > .oo-ui-panelLayout-scrollable {
 	overflow-y: hidden;
@@ -386,6 +378,15 @@
 }
 .oo-ui-bookletLayout-outlinePanel > .oo-ui-outlineControlsWidget {
 	box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
+}
+.oo-ui-indexLayout > .oo-ui-menuLayout-menu {
+	height: 3em;
+}
+.oo-ui-indexLayout > .oo-ui-menuLayout-content {
+	top: 3em;
+}
+.oo-ui-indexLayout-stackLayout > .oo-ui-panelLayout {
+	padding: 1.5em;
 }
 .oo-ui-fieldLayout {
 	display: block;
@@ -459,13 +460,30 @@
 .oo-ui-fieldLayout > .oo-ui-popupButtonWidget:last-child {
 	margin-right: 0;
 }
-.oo-ui-fieldLayout-disabled .oo-ui-labelElement-label {
+.oo-ui-fieldLayout-disabled > .oo-ui-fieldLayout-body > .oo-ui-labelElement-label {
 	color: #cccccc;
 }
-.oo-ui-actionFieldLayout-field {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
+.oo-ui-fieldLayout-messages {
+	list-style: none none;
+	margin: 0;
+	padding: 0;
+	margin-top: 0.25em;
+	margin-left: 0.25em;
+}
+.oo-ui-fieldLayout-messages > li {
+	margin: 0;
+	padding: 0;
+}
+.oo-ui-fieldLayout-messages .oo-ui-iconWidget {
+	display: none;
+}
+.oo-ui-fieldLayout-messages .oo-ui-fieldLayout-messages-error {
+	color: #d45353;
+}
+.oo-ui-fieldLayout-messages .oo-ui-labelWidget {
+	padding: 0;
+	line-height: 1.875em;
+	vertical-align: middle;
 }
 .oo-ui-actionFieldLayout-input,
 .oo-ui-actionFieldLayout-button {
@@ -488,8 +506,6 @@
 .oo-ui-fieldsetLayout.oo-ui-iconElement > .oo-ui-iconElement-icon {
 	display: block;
 	position: absolute;
-	background-position: center center;
-	background-repeat: no-repeat;
 }
 .oo-ui-fieldsetLayout.oo-ui-labelElement > .oo-ui-labelElement-label {
 	display: inline-block;
@@ -544,54 +560,71 @@
 .oo-ui-menuLayout-menu,
 .oo-ui-menuLayout-content {
 	position: absolute;
-	-webkit-transition: all ease-in-out 200ms;
-	   -moz-transition: all ease-in-out 200ms;
-	    -ms-transition: all ease-in-out 200ms;
-	     -o-transition: all ease-in-out 200ms;
-	        transition: all ease-in-out 200ms;
+	-webkit-transition: all 200ms ease;
+	   -moz-transition: all 200ms ease;
+	        transition: all 200ms ease;
+}
+.oo-ui-menuLayout-menu {
+	height: 18em;
+	width: 18em;
 }
 .oo-ui-menuLayout-content {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	top: 18em;
+	left: 18em;
+	right: 18em;
+	bottom: 18em;
 }
-.oo-ui-menuLayout-top .oo-ui-menuLayout-menu {
+.oo-ui-menuLayout.oo-ui-menuLayout-hideMenu > .oo-ui-menuLayout-menu {
+	width: 0 !important;
+	height: 0 !important;
+	overflow: hidden;
+}
+.oo-ui-menuLayout.oo-ui-menuLayout-hideMenu > .oo-ui-menuLayout-content {
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+}
+.oo-ui-menuLayout.oo-ui-menuLayout-showMenu.oo-ui-menuLayout-top > .oo-ui-menuLayout-menu {
+	width: auto !important;
 	left: 0;
 	top: 0;
 	right: 0;
 }
-.oo-ui-menuLayout-top .oo-ui-menuLayout-content {
+.oo-ui-menuLayout.oo-ui-menuLayout-showMenu.oo-ui-menuLayout-top > .oo-ui-menuLayout-content {
 	right: 0 !important;
 	bottom: 0 !important;
 	left: 0 !important;
 }
-.oo-ui-menuLayout-after .oo-ui-menuLayout-menu {
+.oo-ui-menuLayout.oo-ui-menuLayout-showMenu.oo-ui-menuLayout-after > .oo-ui-menuLayout-menu {
+	height: auto !important;
 	top: 0;
 	right: 0;
 	bottom: 0;
 }
-.oo-ui-menuLayout-after .oo-ui-menuLayout-content {
+.oo-ui-menuLayout.oo-ui-menuLayout-showMenu.oo-ui-menuLayout-after > .oo-ui-menuLayout-content {
 	bottom: 0 !important;
 	left: 0 !important;
 	top: 0 !important;
 }
-.oo-ui-menuLayout-bottom .oo-ui-menuLayout-menu {
+.oo-ui-menuLayout.oo-ui-menuLayout-showMenu.oo-ui-menuLayout-bottom > .oo-ui-menuLayout-menu {
+	width: auto !important;
 	right: 0;
 	bottom: 0;
 	left: 0;
 }
-.oo-ui-menuLayout-bottom .oo-ui-menuLayout-content {
+.oo-ui-menuLayout.oo-ui-menuLayout-showMenu.oo-ui-menuLayout-bottom > .oo-ui-menuLayout-content {
 	left: 0 !important;
 	top: 0 !important;
 	right: 0 !important;
 }
-.oo-ui-menuLayout-before .oo-ui-menuLayout-menu {
+.oo-ui-menuLayout.oo-ui-menuLayout-showMenu.oo-ui-menuLayout-before > .oo-ui-menuLayout-menu {
+	height: auto !important;
 	bottom: 0;
 	left: 0;
 	top: 0;
 }
-.oo-ui-menuLayout-before .oo-ui-menuLayout-content {
+.oo-ui-menuLayout.oo-ui-menuLayout-showMenu.oo-ui-menuLayout-before > .oo-ui-menuLayout-content {
 	top: 0 !important;
 	right: 0 !important;
 	bottom: 0 !important;
@@ -616,9 +649,25 @@
 	border-radius: 0.5em;
 	box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.25);
 }
+.oo-ui-panelLayout-padded.oo-ui-panelLayout-framed {
+	margin: 1em 0;
+}
 .oo-ui-stackLayout-continuous > .oo-ui-panelLayout {
 	display: block;
 	position: relative;
+}
+.oo-ui-horizontalLayout > .oo-ui-widget {
+	display: inline-block;
+	vertical-align: middle;
+}
+.oo-ui-horizontalLayout > .oo-ui-layout {
+	display: inline-block;
+}
+.oo-ui-horizontalLayout > .oo-ui-widget {
+	margin-right: 0.5em;
+}
+.oo-ui-horizontalLayout > .oo-ui-widget:last-child {
+	margin-right: 0;
 }
 .oo-ui-popupTool .oo-ui-popupWidget-popup,
 .oo-ui-popupTool .oo-ui-popupWidget-anchor {
@@ -627,7 +676,6 @@
 .oo-ui-popupTool .oo-ui-popupWidget {
 	/* @noflip */
 	margin-left: 1.25em;
-	font-size: 0.8em;
 }
 .oo-ui-toolGroupTool > .oo-ui-popupToolGroup {
 	border: 0;
@@ -635,20 +683,20 @@
 	margin: 0;
 }
 .oo-ui-toolGroupTool:first-child > .oo-ui-popupToolGroup {
-	border-top-left-radius: 0.25em;
-	border-bottom-left-radius: 0.25em;
+	border-top-left-radius: 0.3125em;
+	border-bottom-left-radius: 0.3125em;
 }
 .oo-ui-toolGroupTool:last-child > .oo-ui-popupToolGroup {
-	border-top-right-radius: 0.25em;
-	border-bottom-right-radius: 0.25em;
+	border-top-right-radius: 0.3125em;
+	border-bottom-right-radius: 0.3125em;
 }
 .oo-ui-toolGroupTool > .oo-ui-popupToolGroup > .oo-ui-popupToolGroup-handle {
-	height: 1.5em;
-	padding: 0.25em;
+	height: 1.875em;
+	padding: 0.3125em;
 }
 .oo-ui-toolGroupTool > .oo-ui-popupToolGroup > .oo-ui-popupToolGroup-handle .oo-ui-iconElement-icon {
-	height: 1.5em;
-	width: 1.5em;
+	height: 1.875em;
+	width: 1.875em;
 }
 .oo-ui-toolGroupTool > .oo-ui-popupToolGroup.oo-ui-labelElement > .oo-ui-popupToolGroup-handle .oo-ui-labelElement-label {
 	line-height: 2.1em;
@@ -656,21 +704,18 @@
 .oo-ui-toolGroup {
 	display: inline-block;
 	vertical-align: middle;
-	margin: 0.3em;
-	border-radius: 0.25em;
+	margin: 0.375em;
+	border-radius: 0.3125em;
 	border: 1px solid transparent;
-	-webkit-transition: border-color 300ms ease-in-out;
-	   -moz-transition: border-color 300ms ease-in-out;
-	    -ms-transition: border-color 300ms ease-in-out;
-	     -o-transition: border-color 300ms ease-in-out;
-	        transition: border-color 300ms ease-in-out;
+	-webkit-transition: border-color 250ms ease;
+	   -moz-transition: border-color 250ms ease;
+	        transition: border-color 250ms ease;
 }
 .oo-ui-toolGroup-empty {
 	display: none;
 }
-.oo-ui-toolGroup .oo-ui-tool-link .oo-ui-iconElement-icon {
-	background-position: center center;
-	background-repeat: no-repeat;
+.oo-ui-toolGroup .oo-ui-tool-link {
+	text-decoration: none;
 }
 .oo-ui-toolbar-narrow .oo-ui-toolGroup + .oo-ui-toolGroup {
 	margin-left: 0;
@@ -685,6 +730,9 @@
 .oo-ui-barToolGroup > .oo-ui-labelElement-label {
 	display: none;
 }
+.oo-ui-barToolGroup.oo-ui-widget-enabled > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link {
+	cursor: pointer;
+}
 .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool {
 	display: inline-block;
 	position: relative;
@@ -693,61 +741,69 @@
 .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link {
 	display: block;
 }
-.oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link .oo-ui-iconElement-icon {
-	display: block;
-}
-.oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link .oo-ui-tool-accel,
-.oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link .oo-ui-tool-title {
+.oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link .oo-ui-tool-accel {
 	display: none;
+}
+.oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-iconElement > .oo-ui-tool-link .oo-ui-iconElement-icon {
+	display: inline-block;
+	vertical-align: top;
+}
+.oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-iconElement > .oo-ui-tool-link .oo-ui-tool-title {
+	display: none;
+}
+.oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-iconElement.oo-ui-tool-with-label > .oo-ui-tool-link .oo-ui-tool-title {
+	display: inline;
 }
 .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-widget-disabled > .oo-ui-tool-link {
+	outline: 0;
 	cursor: default;
-}
-.oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link > .oo-ui-tool-title,
-.oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link > .oo-ui-tool-accel {
-	display: none;
-}
-.oo-ui-barToolGroup.oo-ui-widget-enabled > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link {
-	cursor: pointer;
 }
 .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool {
 	margin: -1px 0 -1px -1px;
 	border: 1px solid transparent;
 }
 .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool:first-child {
-	border-top-left-radius: 0.25em;
-	border-bottom-left-radius: 0.25em;
+	border-top-left-radius: 0.3125em;
+	border-bottom-left-radius: 0.3125em;
 }
 .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool:last-child {
 	margin-right: -1px;
-	border-top-right-radius: 0.25em;
-	border-bottom-right-radius: 0.25em;
+	border-top-right-radius: 0.3125em;
+	border-bottom-right-radius: 0.3125em;
 }
 .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link {
-	height: 1.5em;
-	padding: 0.25em;
+	height: 1.875em;
+	padding: 0.3125em;
 }
 .oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link .oo-ui-iconElement-icon {
-	height: 1.5em;
-	width: 1.5em;
+	height: 1.875em;
+	width: 1.875em;
+}
+.oo-ui-barToolGroup > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link .oo-ui-tool-title {
+	line-height: 2.1em;
 }
 .oo-ui-barToolGroup.oo-ui-widget-enabled > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-widget-enabled:hover {
 	border-color: rgba(0, 0, 0, 0.2);
 }
 .oo-ui-barToolGroup.oo-ui-widget-enabled > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-tool-active.oo-ui-widget-enabled {
 	border-color: rgba(0, 0, 0, 0.2);
-	box-shadow: inset 0 0.07em 0.07em 0 rgba(0, 0, 0, 0.07);
+	box-shadow: inset 0 0.0875em 0.0875em 0 rgba(0, 0, 0, 0.07);
 	background: #f8fbfd;
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#f1f7fb', endColorstr='#ffffff');
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #f1f7fb), color-stop(100%, #ffffff));
 	background-image: -webkit-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
 	background-image:    -moz-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
-	background-image:     -ms-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
 	background-image:      -o-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
-	background-image:         linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
+	background-image:         linear-gradient(to bottom, #f1f7fb 0%, #ffffff 100%);
 }
 .oo-ui-barToolGroup.oo-ui-widget-enabled > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-tool-active.oo-ui-widget-enabled + .oo-ui-tool-active.oo-ui-widget-enabled {
 	border-left-color: rgba(0, 0, 0, 0.1);
+}
+.oo-ui-barToolGroup.oo-ui-widget-enabled > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-widget-disabled > .oo-ui-tool-link:focus {
+	outline: 0;
+}
+.oo-ui-barToolGroup.oo-ui-widget-enabled > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-widget-disabled > .oo-ui-tool-link .oo-ui-tool-title {
+	color: #cccccc;
 }
 .oo-ui-barToolGroup.oo-ui-widget-enabled > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-widget-disabled > .oo-ui-tool-link .oo-ui-iconElement-icon {
 	opacity: 0.2;
@@ -755,13 +811,22 @@
 .oo-ui-barToolGroup.oo-ui-widget-enabled > .oo-ui-toolGroup-tools > .oo-ui-tool.oo-ui-widget-enabled:hover > .oo-ui-tool-link .oo-ui-iconElement-icon {
 	opacity: 1;
 }
+.oo-ui-barToolGroup.oo-ui-widget-disabled > .oo-ui-toolGroup-tools > .oo-ui-tool:focus {
+	outline: 0;
+}
+.oo-ui-barToolGroup.oo-ui-widget-disabled > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link:focus {
+	outline: 0;
+}
+.oo-ui-barToolGroup.oo-ui-widget-disabled > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link .oo-ui-tool-title {
+	color: #cccccc;
+}
 .oo-ui-barToolGroup.oo-ui-widget-disabled > .oo-ui-toolGroup-tools > .oo-ui-tool > .oo-ui-tool-link .oo-ui-iconElement-icon {
 	opacity: 0.2;
 }
 .oo-ui-popupToolGroup {
 	position: relative;
-	height: 2em;
-	min-width: 2em;
+	height: 2.5em;
+	min-width: 2.5em;
 }
 .oo-ui-popupToolGroup-handle {
 	display: block;
@@ -770,20 +835,15 @@
 .oo-ui-popupToolGroup-handle .oo-ui-indicatorElement-indicator,
 .oo-ui-popupToolGroup-handle .oo-ui-iconElement-icon {
 	position: absolute;
-	background-position: center center;
-	background-repeat: no-repeat;
 }
 .oo-ui-popupToolGroup.oo-ui-widget-disabled .oo-ui-popupToolGroup-handle {
+	outline: 0;
 	cursor: default;
 }
 .oo-ui-popupToolGroup .oo-ui-toolGroup-tools {
 	display: none;
 	position: absolute;
 	z-index: 4;
-}
-.oo-ui-popupToolGroup .oo-ui-toolGroup-tools .oo-ui-iconElement-icon {
-	background-repeat: no-repeat;
-	background-position: center center;
 }
 .oo-ui-popupToolGroup-active.oo-ui-widget-enabled > .oo-ui-toolGroup-tools {
 	display: block;
@@ -799,7 +859,6 @@
 	width: 100%;
 	vertical-align: middle;
 	white-space: nowrap;
-	text-decoration: none;
 }
 .oo-ui-popupToolGroup .oo-ui-tool-link .oo-ui-iconElement-icon,
 .oo-ui-popupToolGroup .oo-ui-tool-link .oo-ui-tool-accel,
@@ -814,23 +873,22 @@
 	padding-left: 3em;
 }
 .oo-ui-toolbar-narrow .oo-ui-popupToolGroup {
-	min-width: 1.5em;
+	min-width: 1.875em;
 }
 .oo-ui-popupToolGroup.oo-ui-iconElement {
-	min-width: 2.5em;
+	min-width: 3.125em;
 }
 .oo-ui-toolbar-narrow .oo-ui-popupToolGroup.oo-ui-iconElement {
-	min-width: 2em;
+	min-width: 2.5em;
 }
 .oo-ui-popupToolGroup.oo-ui-indicatorElement.oo-ui-iconElement {
-	min-width: 3.5em;
+	min-width: 4.375em;
 }
 .oo-ui-toolbar-narrow .oo-ui-popupToolGroup.oo-ui-indicatorElement.oo-ui-iconElement {
-	min-width: 3em;
+	min-width: 3.75em;
 }
 .oo-ui-popupToolGroup.oo-ui-labelElement .oo-ui-popupToolGroup-handle .oo-ui-labelElement-label {
 	line-height: 2.6em;
-	font-size: 0.8em;
 	margin: 0 1em;
 }
 .oo-ui-toolbar-narrow .oo-ui-popupToolGroup.oo-ui-labelElement .oo-ui-popupToolGroup-handle .oo-ui-labelElement-label {
@@ -849,58 +907,56 @@
 	margin-right: 1.75em;
 }
 .oo-ui-popupToolGroup-handle .oo-ui-indicatorElement-indicator {
-	width: 0.75em;
-	height: 0.75em;
-	margin: 0.625em;
+	width: 0.9375em;
+	height: 0.9375em;
+	margin: 0.78125em;
 	top: 0;
 	right: 0;
 }
 .oo-ui-toolbar-narrow .oo-ui-popupToolGroup-handle .oo-ui-indicatorElement-indicator {
-	right: -0.25em;
+	right: -0.3125em;
 }
 .oo-ui-popupToolGroup-handle .oo-ui-iconElement-icon {
-	width: 1.5em;
-	height: 1.5em;
-	margin: 0.25em;
+	width: 1.875em;
+	height: 1.875em;
+	margin: 0.3125em;
 	top: 0;
-	left: 0.25em;
+	left: 0.3125em;
 }
 .oo-ui-toolbar-narrow .oo-ui-popupToolGroup-handle .oo-ui-iconElement-icon {
 	left: 0;
 }
 .oo-ui-popupToolGroup-header {
 	line-height: 2.6em;
-	font-size: 0.8em;
 	margin: 0 0.6em;
 	font-weight: bold;
 }
 .oo-ui-popupToolGroup-active.oo-ui-widget-enabled {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
-	box-shadow: inset 0 0.07em 0.07em 0 rgba(0, 0, 0, 0.07);
+	box-shadow: inset 0 0.0875em 0.0875em 0 rgba(0, 0, 0, 0.07);
 	background: #f8fbfd;
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#f1f7fb', endColorstr='#ffffff');
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #f1f7fb), color-stop(100%, #ffffff));
 	background-image: -webkit-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
 	background-image:    -moz-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
-	background-image:     -ms-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
 	background-image:      -o-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
-	background-image:         linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
+	background-image:         linear-gradient(to bottom, #f1f7fb 0%, #ffffff 100%);
 }
 .oo-ui-popupToolGroup .oo-ui-toolGroup-tools {
-	top: 2em;
+	top: 2.5em;
 	margin: 0 -1px;
 	border: 1px solid #cccccc;
 	background-color: white;
-	box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0.3125em 1.25em rgba(0, 0, 0, 0.25);
 }
 .oo-ui-popupToolGroup .oo-ui-tool-link {
-	padding: 0.25em 0 0.25em 0.25em;
+	padding: 0.3125em 0 0.3125em 0.3125em;
 }
 .oo-ui-popupToolGroup .oo-ui-tool-link .oo-ui-iconElement-icon {
-	height: 1.5em;
-	width: 1.5em;
-	min-width: 1.5em;
+	height: 1.875em;
+	width: 1.875em;
+	min-width: 1.875em;
 }
 .oo-ui-popupToolGroup .oo-ui-tool-link .oo-ui-tool-title {
 	padding-left: 0.5em;
@@ -908,7 +964,6 @@
 .oo-ui-popupToolGroup .oo-ui-tool-link .oo-ui-tool-accel,
 .oo-ui-popupToolGroup .oo-ui-tool-link .oo-ui-tool-title {
 	line-height: 2em;
-	font-size: 0.8em;
 }
 .oo-ui-popupToolGroup .oo-ui-tool-link .oo-ui-tool-accel {
 	color: #888888;
@@ -926,7 +981,7 @@
 	cursor: default;
 }
 .oo-ui-listToolGroup .oo-ui-toolGroup-tools {
-	padding: 0.25em;
+	padding: 0.3125em;
 }
 .oo-ui-listToolGroup.oo-ui-popupToolGroup-active {
 	border-color: rgba(0, 0, 0, 0.2);
@@ -934,19 +989,18 @@
 .oo-ui-listToolGroup .oo-ui-tool {
 	border: 1px solid transparent;
 	margin: -1px 0;
-	padding: 0 0.5em 0 0;
+	padding: 0 0.625em 0 0;
 }
 .oo-ui-listToolGroup .oo-ui-tool-active.oo-ui-widget-enabled {
 	border-color: rgba(0, 0, 0, 0.1);
-	box-shadow: inset 0 0.07em 0.07em 0 rgba(0, 0, 0, 0.07);
+	box-shadow: inset 0 0.0875em 0.0875em 0 rgba(0, 0, 0, 0.07);
 	background: #f8fbfd;
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#f1f7fb', endColorstr='#ffffff');
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #f1f7fb), color-stop(100%, #ffffff));
 	background-image: -webkit-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
 	background-image:    -moz-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
-	background-image:     -ms-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
 	background-image:      -o-linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
-	background-image:         linear-gradient(top, #f1f7fb 0%, #ffffff 100%);
+	background-image:         linear-gradient(to bottom, #f1f7fb 0%, #ffffff 100%);
 }
 .oo-ui-listToolGroup .oo-ui-tool-active.oo-ui-widget-enabled + .oo-ui-tool-active.oo-ui-widget-enabled {
 	border-top-color: rgba(0, 0, 0, 0.1);
@@ -989,13 +1043,13 @@
 	cursor: default;
 }
 .oo-ui-menuToolGroup .oo-ui-popupToolGroup-handle {
-	min-width: 8em;
+	min-width: 10em;
 }
 .oo-ui-toolbar-narrow .oo-ui-menuToolGroup .oo-ui-popupToolGroup-handle {
-	min-width: 6.5em;
+	min-width: 8.125em;
 }
 .oo-ui-menuToolGroup .oo-ui-toolGroup-tools {
-	padding: 0.25em 0 0.25em 0;
+	padding: 0.3125em 0 0.3125em 0;
 }
 .oo-ui-menuToolGroup.oo-ui-widget-enabled:hover {
 	border-color: rgba(0, 0, 0, 0.2);
@@ -1004,13 +1058,16 @@
 	border-color: rgba(0, 0, 0, 0.25);
 }
 .oo-ui-menuToolGroup .oo-ui-tool {
-	padding: 0 1em 0 0.25em;
+	padding: 0 1.25em 0 0.3125em;
 }
 .oo-ui-menuToolGroup .oo-ui-tool-link .oo-ui-iconElement-icon {
 	background-image: none;
 }
 .oo-ui-menuToolGroup .oo-ui-tool-active .oo-ui-tool-link .oo-ui-iconElement-icon {
 	background-image: /* @embed */ url(themes/apex/images/icons/check.svg);
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
 }
 .oo-ui-menuToolGroup .oo-ui-tool.oo-ui-widget-enabled:hover {
 	background-color: #e1f3ff;
@@ -1034,9 +1091,13 @@
 }
 .oo-ui-toolbar-bar {
 	line-height: 1em;
+	position: relative;
 }
 .oo-ui-toolbar-actions {
 	float: right;
+}
+.oo-ui-toolbar-actions .oo-ui-toolbar {
+	display: inline-block;
 }
 .oo-ui-toolbar-tools {
 	display: inline;
@@ -1078,24 +1139,41 @@
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #ffffff), color-stop(100%, #f1f7fb));
 	background-image: -webkit-linear-gradient(top, #ffffff 0%, #f1f7fb 100%);
 	background-image:    -moz-linear-gradient(top, #ffffff 0%, #f1f7fb 100%);
-	background-image:     -ms-linear-gradient(top, #ffffff 0%, #f1f7fb 100%);
 	background-image:      -o-linear-gradient(top, #ffffff 0%, #f1f7fb 100%);
-	background-image:         linear-gradient(top, #ffffff 0%, #f1f7fb 100%);
+	background-image:         linear-gradient(to bottom, #ffffff 0%, #f1f7fb 100%);
 }
 .oo-ui-toolbar-bar .oo-ui-toolbar-bar {
 	border: none;
 	background: none;
 }
+.oo-ui-toolbar-actions > .oo-ui-buttonElement-framed,
+.oo-ui-toolbar-actions > .oo-ui-buttonElement-framed:last-child {
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+	margin-right: 0.5em;
+}
+.oo-ui-toolbar-actions > .oo-ui-buttonElement-frameless.oo-ui-labelElement,
+.oo-ui-toolbar-actions > .oo-ui-buttonElement-frameless:last-child.oo-ui-labelElement {
+	margin: 0;
+}
+.oo-ui-toolbar-actions > .oo-ui-buttonElement-frameless.oo-ui-labelElement > .oo-ui-buttonElement-button,
+.oo-ui-toolbar-actions > .oo-ui-buttonElement-frameless:last-child.oo-ui-labelElement > .oo-ui-buttonElement-button {
+	margin: 0;
+	padding: 0 0.3125em;
+}
+.oo-ui-toolbar-actions > .oo-ui-buttonElement-frameless.oo-ui-labelElement > .oo-ui-buttonElement-button > .oo-ui-labelElement-label,
+.oo-ui-toolbar-actions > .oo-ui-buttonElement-frameless:last-child.oo-ui-labelElement > .oo-ui-buttonElement-button > .oo-ui-labelElement-label {
+	margin: 0 1em;
+	line-height: 3.40625em;
+}
 .oo-ui-toolbar-shadow {
 	background-image: /* @embed */ url(themes/apex/images/toolbar-shadow.png);
 	bottom: -9px;
 	height: 9px;
-	opacity: 0.125;
-	-webkit-transition: opacity 500ms ease-in-out;
-	   -moz-transition: opacity 500ms ease-in-out;
-	    -ms-transition: opacity 500ms ease-in-out;
-	     -o-transition: opacity 500ms ease-in-out;
-	        transition: opacity 500ms ease-in-out;
+	opacity: 0.5;
+	-webkit-transition: opacity 500ms ease;
+	   -moz-transition: opacity 500ms ease;
+	        transition: opacity 500ms ease;
 }
 .oo-ui-optionWidget {
 	position: relative;
@@ -1136,8 +1214,6 @@
 .oo-ui-decoratedOptionWidget .oo-ui-iconElement-icon,
 .oo-ui-decoratedOptionWidget .oo-ui-indicatorElement-indicator {
 	position: absolute;
-	background-repeat: no-repeat;
-	background-position: center center;
 }
 .oo-ui-decoratedOptionWidget.oo-ui-iconElement .oo-ui-iconElement-icon,
 .oo-ui-decoratedOptionWidget.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator {
@@ -1234,8 +1310,6 @@
 .oo-ui-iconWidget {
 	display: inline-block;
 	vertical-align: middle;
-	background-position: center center;
-	background-repeat: no-repeat;
 	line-height: 2.5em;
 	height: 1.875em;
 	width: 1.875em;
@@ -1246,8 +1320,6 @@
 .oo-ui-indicatorWidget {
 	display: inline-block;
 	vertical-align: middle;
-	background-position: center center;
-	background-repeat: no-repeat;
 	line-height: 2.5em;
 	height: 0.9375em;
 	width: 0.9375em;
@@ -1273,10 +1345,10 @@
 .oo-ui-buttonGroupWidget:last-child {
 	margin-right: 0;
 }
-.oo-ui-buttonGroupWidget .oo-ui-buttonWidget {
+.oo-ui-buttonGroupWidget .oo-ui-buttonElement {
 	margin-right: 0;
 }
-.oo-ui-buttonGroupWidget .oo-ui-buttonWidget:last-child {
+.oo-ui-buttonGroupWidget .oo-ui-buttonElement:last-child {
 	margin-right: 0;
 }
 .oo-ui-buttonGroupWidget .oo-ui-buttonElement-framed .oo-ui-buttonElement-button {
@@ -1292,6 +1364,14 @@
 	border-bottom-right-radius: 0.3em;
 	border-top-right-radius: 0.3em;
 }
+.oo-ui-toggleButtonWidget {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.5em;
+}
+.oo-ui-toggleButtonWidget:last-child {
+	margin-right: 0;
+}
 .oo-ui-toggleSwitchWidget {
 	position: relative;
 	display: inline-block;
@@ -1304,7 +1384,6 @@
 	-webkit-transform: translateZ(0px);
 	   -moz-transform: translateZ(0px);
 	    -ms-transform: translateZ(0px);
-	     -o-transform: translateZ(0px);
 	        transform: translateZ(0px);
 	height: 2em;
 	width: 4em;
@@ -1317,9 +1396,8 @@
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #dddddd), color-stop(100%, #ffffff));
 	background-image: -webkit-linear-gradient(top, #dddddd 0%, #ffffff 100%);
 	background-image:    -moz-linear-gradient(top, #dddddd 0%, #ffffff 100%);
-	background-image:     -ms-linear-gradient(top, #dddddd 0%, #ffffff 100%);
 	background-image:      -o-linear-gradient(top, #dddddd 0%, #ffffff 100%);
-	background-image:         linear-gradient(top, #dddddd 0%, #ffffff 100%);
+	background-image:         linear-gradient(to bottom, #dddddd 0%, #ffffff 100%);
 }
 .oo-ui-toggleSwitchWidget.oo-ui-widget-disabled {
 	cursor: default;
@@ -1361,19 +1439,16 @@
 	border-radius: 1em;
 	box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.1);
 	border: 1px #c9c9c9 solid;
-	-webkit-transition: left 200ms ease-in-out, margin-left 200ms ease-in-out;
-	   -moz-transition: left 200ms ease-in-out, margin-left 200ms ease-in-out;
-	    -ms-transition: left 200ms ease-in-out, margin-left 200ms ease-in-out;
-	     -o-transition: left 200ms ease-in-out, margin-left 200ms ease-in-out;
-	        transition: left 200ms ease-in-out, margin-left 200ms ease-in-out;
+	-webkit-transition: left 250ms ease, margin-left 250ms ease;
+	   -moz-transition: left 250ms ease, margin-left 250ms ease;
+	        transition: left 250ms ease, margin-left 250ms ease;
 	background: #eeeeee;
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#ffffff', endColorstr='#dddddd');
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
 	background-image: -webkit-linear-gradient(top, #ffffff 0%, #dddddd 100%);
 	background-image:    -moz-linear-gradient(top, #ffffff 0%, #dddddd 100%);
-	background-image:     -ms-linear-gradient(top, #ffffff 0%, #dddddd 100%);
 	background-image:      -o-linear-gradient(top, #ffffff 0%, #dddddd 100%);
-	background-image:         linear-gradient(top, #ffffff 0%, #dddddd 100%);
+	background-image:         linear-gradient(to bottom, #ffffff 0%, #dddddd 100%);
 }
 .oo-ui-toggleSwitchWidget.oo-ui-widget-enabled:hover,
 .oo-ui-toggleSwitchWidget.oo-ui-widget-enabled:hover .oo-ui-toggleSwitchWidget-grip {
@@ -1382,19 +1457,16 @@
 .oo-ui-toggleSwitchWidget .oo-ui-toggleSwitchWidget-glow {
 	border-radius: 1em;
 	box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.07);
-	-webkit-transition: opacity 200ms ease-in-out;
-	   -moz-transition: opacity 200ms ease-in-out;
-	    -ms-transition: opacity 200ms ease-in-out;
-	     -o-transition: opacity 200ms ease-in-out;
-	        transition: opacity 200ms ease-in-out;
+	-webkit-transition: opacity 250ms ease;
+	   -moz-transition: opacity 250ms ease;
+	        transition: opacity 250ms ease;
 	background: #cde7f4;
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#b0d9ee', endColorstr='#eaf4fa');
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #b0d9ee), color-stop(100%, #eaf4fa));
 	background-image: -webkit-linear-gradient(top, #b0d9ee 0%, #eaf4fa 100%);
 	background-image:    -moz-linear-gradient(top, #b0d9ee 0%, #eaf4fa 100%);
-	background-image:     -ms-linear-gradient(top, #b0d9ee 0%, #eaf4fa 100%);
 	background-image:      -o-linear-gradient(top, #b0d9ee 0%, #eaf4fa 100%);
-	background-image:         linear-gradient(top, #b0d9ee 0%, #eaf4fa 100%);
+	background-image:         linear-gradient(to bottom, #b0d9ee 0%, #eaf4fa 100%);
 }
 .oo-ui-toggleWidget-on .oo-ui-toggleSwitchWidget-glow {
 	opacity: 1;
@@ -1413,6 +1485,7 @@
 }
 .oo-ui-progressBarWidget {
 	max-width: 50em;
+	background-color: #ffffff;
 	border: 1px solid #cccccc;
 	border-radius: 0.25em;
 	overflow: hidden;
@@ -1420,25 +1493,20 @@
 .oo-ui-progressBarWidget-bar {
 	height: 1em;
 	border-right: 1px solid #cccccc;
-	-webkit-transition: width 200ms, margin-left 200ms;
-	   -moz-transition: width 200ms, margin-left 200ms;
-	    -ms-transition: width 200ms, margin-left 200ms;
-	     -o-transition: width 200ms, margin-left 200ms;
-	        transition: width 200ms, margin-left 200ms;
+	-webkit-transition: width 250ms ease, margin-left 250ms ease;
+	   -moz-transition: width 250ms ease, margin-left 250ms ease;
+	        transition: width 250ms ease, margin-left 250ms ease;
 	background: #cde7f4;
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#eaf4fa', endColorstr='#b0d9ee');
 	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #eaf4fa), color-stop(100%, #b0d9ee));
 	background-image: -webkit-linear-gradient(top, #eaf4fa 0%, #b0d9ee 100%);
 	background-image:    -moz-linear-gradient(top, #eaf4fa 0%, #b0d9ee 100%);
-	background-image:     -ms-linear-gradient(top, #eaf4fa 0%, #b0d9ee 100%);
 	background-image:      -o-linear-gradient(top, #eaf4fa 0%, #b0d9ee 100%);
-	background-image:         linear-gradient(top, #eaf4fa 0%, #b0d9ee 100%);
+	background-image:         linear-gradient(to bottom, #eaf4fa 0%, #b0d9ee 100%);
 }
 .oo-ui-progressBarWidget-indeterminate .oo-ui-progressBarWidget-bar {
 	-webkit-animation: oo-ui-progressBarWidget-slide 2s infinite linear;
 	   -moz-animation: oo-ui-progressBarWidget-slide 2s infinite linear;
-	    -ms-animation: oo-ui-progressBarWidget-slide 2s infinite linear;
-	     -o-animation: oo-ui-progressBarWidget-slide 2s infinite linear;
 	        animation: oo-ui-progressBarWidget-slide 2s infinite linear;
 	width: 40%;
 	margin-left: -10%;
@@ -1479,10 +1547,10 @@
 	    -ms-user-select: none;
 	        user-select: none;
 }
-.oo-ui-popupWidget-head .oo-ui-buttonWidget {
+.oo-ui-popupWidget-head > .oo-ui-buttonWidget {
 	float: right;
 }
-.oo-ui-popupWidget-head .oo-ui-labelElement-label {
+.oo-ui-popupWidget-head > .oo-ui-labelElement-label {
 	float: left;
 	cursor: default;
 }
@@ -1491,9 +1559,9 @@
 	overflow: hidden;
 }
 .oo-ui-popupWidget-popup {
+	background-color: #ffffff;
 	border: 1px solid #cccccc;
 	border-radius: 0.25em;
-	background-color: #ffffff;
 	box-shadow: 0 0.15em 0.5em 0 rgba(0, 0, 0, 0.2);
 }
 .oo-ui-popupWidget-anchored .oo-ui-popupWidget-popup {
@@ -1522,19 +1590,17 @@
 	border-width: 6px;
 }
 .oo-ui-popupWidget-transitioning .oo-ui-popupWidget-popup {
-	-webkit-transition: width 100ms ease-in-out, height 100ms ease-in-out, left 100ms ease-in-out;
-	   -moz-transition: width 100ms ease-in-out, height 100ms ease-in-out, left 100ms ease-in-out;
-	    -ms-transition: width 100ms ease-in-out, height 100ms ease-in-out, left 100ms ease-in-out;
-	     -o-transition: width 100ms ease-in-out, height 100ms ease-in-out, left 100ms ease-in-out;
-	        transition: width 100ms ease-in-out, height 100ms ease-in-out, left 100ms ease-in-out;
+	-webkit-transition: width 100ms ease, height 100ms ease, left 100ms ease;
+	   -moz-transition: width 100ms ease, height 100ms ease, left 100ms ease;
+	        transition: width 100ms ease, height 100ms ease, left 100ms ease;
 }
 .oo-ui-popupWidget-head {
 	height: 2.5em;
 }
-.oo-ui-popupWidget-head .oo-ui-buttonWidget {
+.oo-ui-popupWidget-head > .oo-ui-buttonWidget {
 	margin: 0.25em;
 }
-.oo-ui-popupWidget-head .oo-ui-labelElement-label {
+.oo-ui-popupWidget-head > .oo-ui-labelElement-label {
 	margin: 0.75em 1em;
 }
 .oo-ui-popupWidget-body-padded {
@@ -1548,9 +1614,11 @@
 	cursor: auto;
 }
 .oo-ui-popupButtonWidget.oo-ui-buttonElement-frameless > .oo-ui-popupWidget {
+	/* @noflip */
 	left: 1em;
 }
 .oo-ui-popupButtonWidget.oo-ui-buttonElement-framed > .oo-ui-popupWidget {
+	/* @noflip */
 	left: 1.25em;
 }
 .oo-ui-inputWidget {
@@ -1562,6 +1630,12 @@
 .oo-ui-buttonInputWidget {
 	display: inline-block;
 	vertical-align: middle;
+}
+.oo-ui-buttonInputWidget > button,
+.oo-ui-buttonInputWidget > input {
+	border: 0;
+	padding: 0;
+	background-color: transparent;
 }
 .oo-ui-dropdownInputWidget {
 	position: relative;
@@ -1581,6 +1655,7 @@
 	        box-sizing: border-box;
 }
 .oo-ui-dropdownInputWidget select {
+	background-color: #ffffff;
 	height: 2.5em;
 	padding: 0.5em;
 	font-size: inherit;
@@ -1597,6 +1672,9 @@
 	color: #cccccc;
 	border-color: #dddddd;
 	background-color: #f3f3f3;
+}
+.oo-ui-radioSelectInputWidget .oo-ui-fieldLayout {
+	margin-bottom: 0;
 }
 .oo-ui-textInputWidget {
 	position: relative;
@@ -1616,6 +1694,24 @@
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 }
+.oo-ui-textInputWidget textarea {
+	overflow: auto;
+}
+.oo-ui-textInputWidget input[type="search"] {
+	-webkit-appearance: none;
+}
+.oo-ui-textInputWidget input[type="search"]::-ms-clear {
+	display: none;
+}
+.oo-ui-textInputWidget input[type="search"]::-ms-reveal {
+	display: none;
+}
+.oo-ui-textInputWidget input[type="search"]::-webkit-search-decoration,
+.oo-ui-textInputWidget input[type="search"]::-webkit-search-cancel-button,
+.oo-ui-textInputWidget input[type="search"]::-webkit-search-results-button,
+.oo-ui-textInputWidget input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
 .oo-ui-textInputWidget > .oo-ui-iconElement-icon,
 .oo-ui-textInputWidget > .oo-ui-indicatorElement-indicator,
 .oo-ui-textInputWidget > .oo-ui-labelElement-label {
@@ -1627,7 +1723,6 @@
 	position: absolute;
 	top: 0;
 	height: 100%;
-	background-repeat: no-repeat;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	   -moz-user-select: none;
@@ -1636,6 +1731,9 @@
 }
 .oo-ui-textInputWidget.oo-ui-widget-enabled > .oo-ui-iconElement-icon,
 .oo-ui-textInputWidget.oo-ui-widget-enabled > .oo-ui-indicatorElement-indicator {
+	cursor: text;
+}
+.oo-ui-textInputWidget.oo-ui-widget-enabled.oo-ui-textInputWidget-type-search > .oo-ui-indicatorElement-indicator {
 	cursor: pointer;
 }
 .oo-ui-textInputWidget.oo-ui-labelElement > .oo-ui-labelElement-label {
@@ -1660,6 +1758,7 @@
 .oo-ui-textInputWidget input,
 .oo-ui-textInputWidget textarea {
 	padding: 0.5em;
+	line-height: 1.275em;
 	font-size: inherit;
 	font-family: inherit;
 	background-color: #ffffff;
@@ -1667,18 +1766,13 @@
 	border: 1px solid #cccccc;
 	box-shadow: 0 0 0 white, inset 0 0.1em 0.2em #dddddd;
 	border-radius: 0.25em;
-	-webkit-transition: border-color 200ms, box-shadow 200ms;
-	   -moz-transition: border-color 200ms, box-shadow 200ms;
-	    -ms-transition: border-color 200ms, box-shadow 200ms;
-	     -o-transition: border-color 200ms, box-shadow 200ms;
-	        transition: border-color 200ms, box-shadow 200ms;
+	-webkit-transition: border-color 250ms ease, box-shadow 250ms ease;
+	   -moz-transition: border-color 250ms ease, box-shadow 250ms ease;
+	        transition: border-color 250ms ease, box-shadow 250ms ease;
 }
-.oo-ui-textInputWidget-decorated input,
-.oo-ui-textInputWidget-decorated textarea {
-	padding-left: 2em;
-}
-.oo-ui-textInputWidget-icon {
-	width: 2em;
+.oo-ui-textInputWidget input.oo-ui-pendingElement-pending,
+.oo-ui-textInputWidget textarea.oo-ui-pendingElement-pending {
+	background-color: transparent;
 }
 .oo-ui-textInputWidget.oo-ui-widget-enabled input:focus,
 .oo-ui-textInputWidget.oo-ui-widget-enabled textarea:focus {
@@ -1689,6 +1783,10 @@
 .oo-ui-textInputWidget.oo-ui-widget-enabled input[readonly],
 .oo-ui-textInputWidget.oo-ui-widget-enabled textarea[readonly] {
 	color: #777777;
+}
+.oo-ui-textInputWidget.oo-ui-widget-enabled.oo-ui-flaggedElement-invalid input,
+.oo-ui-textInputWidget.oo-ui-widget-enabled.oo-ui-flaggedElement-invalid textarea {
+	background-color: #ffdddd;
 }
 .oo-ui-textInputWidget.oo-ui-widget-disabled input,
 .oo-ui-textInputWidget.oo-ui-widget-disabled textarea {
@@ -1705,25 +1803,22 @@
 	color: #dddddd;
 	text-shadow: 0 1px 1px #ffffff;
 }
-.oo-ui-textInputWidget.oo-ui-pendingElement-pending input,
-.oo-ui-textInputWidget.oo-ui-pendingElement-pending textarea {
-	background-color: transparent;
-	background-image: /* @embed */ url(themes/apex/images/textures/pending.gif);
-}
 .oo-ui-textInputWidget.oo-ui-iconElement input,
 .oo-ui-textInputWidget.oo-ui-iconElement textarea {
-	padding-left: 2em;
+	padding-left: 2.475em;
 }
 .oo-ui-textInputWidget.oo-ui-iconElement .oo-ui-iconElement-icon {
 	width: 1.875em;
-	margin-left: 0.1em;
+	max-height: 2.375em;
+	margin-left: 0.3em;
 }
 .oo-ui-textInputWidget.oo-ui-indicatorElement input,
 .oo-ui-textInputWidget.oo-ui-indicatorElement textarea {
-	padding-right: 1.5em;
+	padding-right: 2.4875em;
 }
 .oo-ui-textInputWidget.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator {
 	width: 0.9375em;
+	max-height: 2.375em;
 	margin-right: 0.775em;
 }
 .oo-ui-textInputWidget > .oo-ui-labelElement-label {
@@ -1732,14 +1827,14 @@
 	color: #888888;
 }
 .oo-ui-textInputWidget-labelPosition-after.oo-ui-indicatorElement > .oo-ui-labelElement-label {
-	margin-right: 1.6em;
+	margin-right: 2.0875em;
 }
 .oo-ui-textInputWidget-labelPosition-before.oo-ui-iconElement > .oo-ui-labelElement-label {
-	margin-left: 2.1em;
+	margin-left: 2.075em;
 }
 .oo-ui-menuSelectWidget {
 	position: absolute;
-	background: #ffffff;
+	background-color: #ffffff;
 	margin-top: -1px;
 	border: 1px solid #cccccc;
 	border-radius: 0 0 0.25em 0.25em;
@@ -1779,9 +1874,9 @@
 .oo-ui-dropdownWidget {
 	display: inline-block;
 	position: relative;
-	margin: 0.25em 0;
 	width: 100%;
 	max-width: 50em;
+	background-color: #ffffff;
 	margin-right: 0.5em;
 }
 .oo-ui-dropdownWidget-handle {
@@ -1800,8 +1895,6 @@
 .oo-ui-dropdownWidget-handle .oo-ui-indicatorElement-indicator,
 .oo-ui-dropdownWidget-handle .oo-ui-iconElement-icon {
 	position: absolute;
-	background-position: center center;
-	background-repeat: no-repeat;
 }
 .oo-ui-dropdownWidget > .oo-ui-menuSelectWidget {
 	z-index: 1;
@@ -1849,6 +1942,9 @@
 	border-color: #dddddd;
 	background-color: #f3f3f3;
 }
+.oo-ui-dropdownWidget.oo-ui-widget-disabled .oo-ui-dropdownWidget-handle:focus {
+	outline: 0;
+}
 .oo-ui-dropdownWidget.oo-ui-widget-disabled .oo-ui-indicatorElement-indicator {
 	opacity: 0.2;
 }
@@ -1857,6 +1953,186 @@
 }
 .oo-ui-dropdownWidget.oo-ui-indicatorElement .oo-ui-dropdownWidget-handle .oo-ui-labelElement-label {
 	margin-right: 2em;
+}
+.oo-ui-selectFileWidget {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	max-width: 50em;
+	margin-right: 0.5em;
+}
+.oo-ui-selectFileWidget-selectButton {
+	display: table-cell;
+	vertical-align: middle;
+}
+.oo-ui-selectFileWidget-selectButton > .oo-ui-buttonElement-button {
+	position: relative;
+	overflow: hidden;
+}
+.oo-ui-selectFileWidget-selectButton > .oo-ui-buttonElement-button > input[type="file"] {
+	position: absolute;
+	margin: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 1;
+	cursor: pointer;
+	padding-top: 100px;
+}
+.oo-ui-selectFileWidget-selectButton.oo-ui-widget-disabled > .oo-ui-buttonElement-button > input[type="file"] {
+	display: none;
+}
+.oo-ui-selectFileWidget-info {
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	overflow: hidden;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-selectFileWidget-label {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-overflow: ellipsis;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-selectFileWidget-label > .oo-ui-selectFileWidget-fileType {
+	float: right;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-indicatorElement-indicator,
+.oo-ui-selectFileWidget-info > .oo-ui-iconElement-icon,
+.oo-ui-selectFileWidget-info > .oo-ui-selectFileWidget-clearButton {
+	position: absolute;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-selectFileWidget-clearButton {
+	z-index: 2;
+}
+.oo-ui-selectFileWidget-dropTarget {
+	cursor: default;
+}
+.oo-ui-selectFileWidget-supported.oo-ui-widget-enabled .oo-ui-selectFileWidget-dropTarget {
+	cursor: pointer;
+}
+.oo-ui-selectFileWidget-empty .oo-ui-selectFileWidget-clearButton,
+.oo-ui-selectFileWidget-notsupported .oo-ui-selectFileWidget-clearButton {
+	display: none;
+}
+.oo-ui-selectFileWidget:last-child {
+	margin-right: 0;
+}
+.oo-ui-selectFileWidget-selectButton > .oo-ui-buttonElement-button {
+	margin-left: 0.5em;
+}
+.oo-ui-selectFileWidget-info {
+	height: 2.4em;
+	background-color: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.25em;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-indicatorElement-indicator {
+	right: 0;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-iconElement-icon {
+	left: 0;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-selectFileWidget-label {
+	line-height: 2.3em;
+	margin: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	text-overflow: ellipsis;
+	left: 0.5em;
+	right: 0.5em;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-selectFileWidget-label > .oo-ui-selectFileWidget-fileType {
+	color: #888888;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-selectFileWidget-clearButton {
+	top: 0;
+	width: 1.875em;
+	margin-right: 0;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-selectFileWidget-clearButton .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
+	height: 2.3em;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-indicatorElement-indicator {
+	top: 0;
+	width: 0.9375em;
+	height: 2.3em;
+	margin-right: 0.775em;
+}
+.oo-ui-selectFileWidget-info > .oo-ui-iconElement-icon {
+	top: 0;
+	width: 1.875em;
+	height: 2.3em;
+	margin-left: 0.3em;
+}
+.oo-ui-selectFileWidget.oo-ui-widget-disabled .oo-ui-selectFileWidget-info {
+	color: #cccccc;
+	text-shadow: 0 1px 1px #ffffff;
+	border-color: #dddddd;
+	background-color: #f3f3f3;
+}
+.oo-ui-selectFileWidget.oo-ui-widget-disabled .oo-ui-selectFileWidget-info > .oo-ui-iconElement-icon,
+.oo-ui-selectFileWidget.oo-ui-widget-disabled .oo-ui-selectFileWidget-info > .oo-ui-indicatorElement-indicator {
+	opacity: 0.2;
+}
+.oo-ui-selectFileWidget-empty .oo-ui-selectFileWidget-label {
+	color: #cccccc;
+}
+.oo-ui-selectFileWidget.oo-ui-iconElement .oo-ui-selectFileWidget-info .oo-ui-selectFileWidget-label {
+	left: 2.475em;
+}
+.oo-ui-selectFileWidget .oo-ui-selectFileWidget-info .oo-ui-selectFileWidget-label {
+	right: 2.175em;
+}
+.oo-ui-selectFileWidget .oo-ui-selectFileWidget-info .oo-ui-selectFileWidget-clearButton {
+	right: 0;
+}
+.oo-ui-selectFileWidget.oo-ui-indicatorElement .oo-ui-selectFileWidget-info .oo-ui-selectFileWidget-label {
+	right: 4.2625em;
+}
+.oo-ui-selectFileWidget.oo-ui-indicatorElement .oo-ui-selectFileWidget-info .oo-ui-selectFileWidget-clearButton {
+	right: 2.0875em;
+}
+.oo-ui-selectFileWidget-empty .oo-ui-selectFileWidget-info .oo-ui-selectFileWidget-label,
+.oo-ui-selectFileWidget-notsupported .oo-ui-selectFileWidget-info .oo-ui-selectFileWidget-label {
+	right: 0.5em;
+}
+.oo-ui-selectFileWidget-empty.oo-ui-indicatorElement .oo-ui-selectFileWidget-info .oo-ui-selectFileWidget-label,
+.oo-ui-selectFileWidget-notsupported.oo-ui-indicatorElement .oo-ui-selectFileWidget-info .oo-ui-selectFileWidget-label {
+	right: 2em;
+}
+.oo-ui-selectFileWidget-dropTarget {
+	line-height: 3.5em;
+	background-color: #ffffff;
+	border: 1px dashed #aaaaaa;
+	padding: 0.5em 1em;
+	margin-bottom: 0.5em;
+	text-align: center;
+	vertical-align: middle;
+}
+.oo-ui-selectFileWidget-supported.oo-ui-widget-enabled .oo-ui-selectFileWidget-dropTarget:hover,
+.oo-ui-selectFileWidget-supported.oo-ui-widget-enabled.oo-ui-selectFileWidget-canDrop oo-ui-selectfilewidget-droptarget {
+	background-color: #e1f3ff;
+}
+.oo-ui-selectFileWidget.oo-ui-widget-disabled .oo-ui-selectFileWidget-dropTarget,
+.oo-ui-selectFileWidget-notsupported .oo-ui-selectFileWidget-dropTarget {
+	color: #cccccc;
+	text-shadow: 0 1px 1px #ffffff;
+	border-color: #dddddd;
+	background-color: #f3f3f3;
 }
 .oo-ui-outlineOptionWidget {
 	position: relative;
@@ -1923,7 +2199,6 @@
 .oo-ui-outlineControlsWidget > .oo-ui-iconElement-icon {
 	float: left;
 	background-position: right center;
-	background-repeat: no-repeat;
 }
 .oo-ui-outlineControlsWidget-items {
 	float: left;
@@ -1949,33 +2224,238 @@
 	margin: 0.5em 0 0.5em 0.5em;
 	opacity: 0.2;
 }
-.oo-ui-comboBoxWidget {
+.oo-ui-tabSelectWidget {
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: #eeeeee;
+	box-shadow: inset 0 -0.015em 0.1em rgba(0, 0, 0, 0.1);
+}
+.oo-ui-tabOptionWidget {
+	display: inline-block;
+	vertical-align: bottom;
+	padding: 0.5em 1em;
+	margin: 0.5em 0 0 0.75em;
+	border: 1px solid transparent;
+	border-bottom: none;
+	border-top-left-radius: 0.5em;
+	border-top-right-radius: 0.5em;
+}
+.oo-ui-tabOptionWidget.oo-ui-indicatorElement .oo-ui-labelElement-label {
+	padding-right: 1.5em;
+}
+.oo-ui-tabOptionWidget.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator {
+	opacity: 0.5;
+}
+.oo-ui-selectWidget-pressed .oo-ui-tabOptionWidget.oo-ui-optionWidget-pressed {
+	background-color: transparent;
+}
+.oo-ui-tabOptionWidget.oo-ui-widget-enabled:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-color: #dddddd;
+}
+.oo-ui-tabOptionWidget.oo-ui-widget-enabled:active {
+	background-color: #ffffff;
+	border-color: #dddddd;
+}
+.oo-ui-selectWidget-pressed .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected,
+.oo-ui-selectWidget-depressed .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected,
+.oo-ui-tabOptionWidget.oo-ui-optionWidget-selected:hover {
+	background-color: #ffffff;
+	border-color: #dddddd;
+}
+.oo-ui-capsuleMultiSelectWidget {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	max-width: 50em;
+}
+.oo-ui-capsuleMultiSelectWidget-handle {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+}
+.oo-ui-capsuleMultiSelectWidget-group {
+	display: inline;
+}
+.oo-ui-capsuleMultiSelectWidget > .oo-ui-menuSelectWidget {
+	z-index: 1;
+	width: 100%;
+}
+.oo-ui-capsuleMultiSelectWidget-handle {
+	background-color: #ffffff;
+	cursor: text;
+	min-height: 2.4em;
+	margin-right: 0.5em;
+	padding: 0.25em 0;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.25em;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.oo-ui-capsuleMultiSelectWidget-handle:last-child {
+	margin-right: 0;
+}
+.oo-ui-capsuleMultiSelectWidget-handle .oo-ui-capsuleMultiSelectWidget-group {
+	margin: 0 0.2em;
+}
+.oo-ui-capsuleMultiSelectWidget-handle > .oo-ui-indicatorElement-indicator,
+.oo-ui-capsuleMultiSelectWidget-handle > .oo-ui-iconElement-icon {
+	position: absolute;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.oo-ui-capsuleMultiSelectWidget-handle > input {
+	border: none;
+	min-width: 1em;
+	max-width: 100%;
+	line-height: 1.675em;
+	margin: 0;
+	padding: 0;
+	font-size: inherit;
+	font-family: inherit;
+	background-color: transparent;
+	color: black;
+	vertical-align: middle;
+}
+.oo-ui-capsuleMultiSelectWidget-handle > input:focus {
+	outline: none;
+}
+.oo-ui-capsuleMultiSelectWidget.oo-ui-indicatorElement .oo-ui-capsuleMultiSelectWidget-handle {
+	padding-right: 0.9375em;
+}
+.oo-ui-capsuleMultiSelectWidget.oo-ui-indicatorElement .oo-ui-capsuleMultiSelectWidget-handle > .oo-ui-indicatorElement-indicator {
+	right: 0;
+	top: 0;
+	width: 0.9375em;
+	height: 0.9375em;
+	margin: 0.775em;
+}
+.oo-ui-capsuleMultiSelectWidget.oo-ui-iconElement .oo-ui-capsuleMultiSelectWidget-handle {
+	padding-left: 1.875em;
+}
+.oo-ui-capsuleMultiSelectWidget.oo-ui-iconElement .oo-ui-capsuleMultiSelectWidget-handle > .oo-ui-iconElement-icon {
+	left: 0;
+	top: 0;
+	width: 1.875em;
+	height: 1.875em;
+	margin: 0.3em;
+}
+.oo-ui-capsuleMultiSelectWidget:hover .oo-ui-capsuleMultiSelectWidget-handle {
+	border-color: rgba(0, 0, 0, 0.2);
+}
+.oo-ui-capsuleMultiSelectWidget.oo-ui-widget-disabled .oo-ui-capsuleMultiSelectWidget-handle {
+	color: #cccccc;
+	text-shadow: 0 1px 1px #ffffff;
+	border-color: #dddddd;
+	background-color: #f3f3f3;
+	cursor: default;
+}
+.oo-ui-capsuleMultiSelectWidget.oo-ui-widget-disabled .oo-ui-capsuleMultiSelectWidget-handle > .oo-ui-iconElement-icon,
+.oo-ui-capsuleMultiSelectWidget.oo-ui-widget-disabled .oo-ui-capsuleMultiSelectWidget-handle > .oo-ui-indicatorElement-indicator {
+	opacity: 0.2;
+}
+.oo-ui-capsuleMultiSelectWidget .oo-ui-selectWidget {
+	border-top-color: #ffffff;
+}
+.oo-ui-capsuleItemWidget {
+	position: relative;
+	display: inline-block;
+	cursor: default;
+	white-space: nowrap;
+	width: auto;
+	max-width: 100%;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	vertical-align: middle;
+	padding: 0 0.4em;
+	margin: 0 0.1em;
+	height: 1.7em;
+	line-height: 1.7em;
+	background: #eeeeee;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#ffffff', endColorstr='#dddddd');
+	background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+	background-image: -webkit-linear-gradient(top, #ffffff 0%, #dddddd 100%);
+	background-image:    -moz-linear-gradient(top, #ffffff 0%, #dddddd 100%);
+	background-image:      -o-linear-gradient(top, #ffffff 0%, #dddddd 100%);
+	background-image:         linear-gradient(to bottom, #ffffff 0%, #dddddd 100%);
+	border: 1px solid #cccccc;
+	color: #555555;
+	border-radius: 0.25em;
+}
+.oo-ui-capsuleItemWidget > .oo-ui-iconElement-icon {
+	cursor: pointer;
+}
+.oo-ui-capsuleItemWidget.oo-ui-widget-disabled > .oo-ui-iconElement-icon {
+	cursor: default;
+}
+.oo-ui-capsuleItemWidget.oo-ui-labelElement .oo-ui-labelElement-label {
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.oo-ui-capsuleItemWidget.oo-ui-indicatorElement > .oo-ui-labelElement-label {
+	padding-right: 1.3375em;
+}
+.oo-ui-capsuleItemWidget.oo-ui-indicatorElement > .oo-ui-indicatorElement-indicator {
+	position: absolute;
+	right: 0.4em;
+	top: 0;
+	width: 0.9375em;
+	height: 100%;
+	background-repeat: no-repeat;
+}
+.oo-ui-capsuleItemWidget.oo-ui-indicatorElement > .oo-ui-indicator-clear {
+	cursor: pointer;
+}
+.oo-ui-capsuleItemWidget.oo-ui-widget-disabled {
+	opacity: 0.5;
+	-webkit-transform: translate3d(0, 0, 0);
+	box-shadow: none;
+	color: #333333;
+	background: #eeeeee;
+	border-color: #cccccc;
+}
+.oo-ui-capsuleItemWidget.oo-ui-widget-disabled > .oo-ui-indicatorElement-indicator {
+	opacity: 0.2;
+}
+.oo-ui-comboBoxInputWidget {
 	display: inline-block;
 	position: relative;
 	width: 100%;
 	max-width: 50em;
 	margin-right: 0.5em;
 }
-.oo-ui-comboBoxWidget > .oo-ui-menuSelectWidget {
+.oo-ui-comboBoxInputWidget > .oo-ui-menuSelectWidget {
 	z-index: 1;
 	width: 100%;
 }
-.oo-ui-comboBoxWidget:last-child {
+.oo-ui-comboBoxInputWidget.oo-ui-widget-enabled > .oo-ui-indicatorElement-indicator {
+	cursor: pointer;
+}
+.oo-ui-comboBoxInputWidget-php input::-webkit-calendar-picker-indicator {
+	opacity: 0 !important;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 2.5em;
+	width: 2.5em;
+	padding: 0;
+}
+.oo-ui-comboBoxInputWidget-php > .oo-ui-indicatorElement-indicator {
+	pointer-events: none;
+}
+.oo-ui-comboBoxInputWidget:last-child {
 	margin-right: 0;
 }
-.oo-ui-comboBoxWidget-handle {
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 0.25em;
-}
-.oo-ui-comboBoxWidget-handle:hover {
-	border-color: rgba(0, 0, 0, 0.2);
-}
-.oo-ui-comboBoxWidget.oo-ui-widget-disabled .oo-ui-textInputWidget.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator,
-.oo-ui-comboBoxWidget-empty .oo-ui-textInputWidget.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator {
+.oo-ui-comboBoxInputWidget.oo-ui-widget-disabled .oo-ui-textInputWidget.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator,
+.oo-ui-comboBoxInputWidget-empty .oo-ui-textInputWidget.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator {
 	cursor: default;
 	opacity: 0.2;
 }
-.oo-ui-comboBoxWidget > .oo-ui-selectWidget {
+.oo-ui-comboBoxInputWidget > .oo-ui-selectWidget {
 	margin-top: -3px;
 }
 .oo-ui-searchWidget-query {
@@ -2008,10 +2488,49 @@
 	padding: 1em;
 	line-height: 0;
 }
+.oo-ui-numberInputWidget {
+	display: inline-block;
+	position: relative;
+	max-width: 50em;
+}
+.oo-ui-numberInputWidget-field {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+.oo-ui-numberInputWidget-field > .oo-ui-buttonWidget,
+.oo-ui-numberInputWidget-field > .oo-ui-textInputWidget {
+	display: table-cell;
+	vertical-align: middle;
+}
+.oo-ui-numberInputWidget-field > .oo-ui-textInputWidget {
+	width: 100%;
+}
+.oo-ui-numberInputWidget-field > .oo-ui-buttonWidget {
+	white-space: nowrap;
+}
+.oo-ui-numberInputWidget-field > .oo-ui-buttonWidget > .oo-ui-buttonElement-button {
+	box-sizing: border-box;
+}
+.oo-ui-numberInputWidget-field > .oo-ui-buttonWidget {
+	width: 2.5em;
+}
+.oo-ui-numberInputWidget-minusButton.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-right-width: 0;
+}
+.oo-ui-numberInputWidget-plusButton.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-left-width: 0;
+}
+.oo-ui-numberInputWidget .oo-ui-textInputWidget input {
+	border-radius: 0;
+}
 .oo-ui-window {
 	background-color: transparent;
 	background-image: none;
-	font-size: 0.8em;
 }
 .oo-ui-window-frame {
 	-webkit-box-sizing: border-box;
@@ -2124,18 +2643,24 @@
 }
 .oo-ui-messageDialog-actions-horizontal .oo-ui-actionWidget {
 	border-right: 1px solid #e5e5e5;
+	margin: 0;
 }
 .oo-ui-messageDialog-actions-horizontal .oo-ui-actionWidget:last-child {
 	border-right-width: 0;
 }
 .oo-ui-messageDialog-actions-vertical .oo-ui-actionWidget {
 	border-bottom: 1px solid #e5e5e5;
+	margin: 0;
 }
 .oo-ui-messageDialog-actions-vertical .oo-ui-actionWidget:last-child {
 	border-bottom-width: 0;
 }
 .oo-ui-messageDialog-actions .oo-ui-actionWidget {
 	height: 3.4em;
+	margin-right: 0;
+}
+.oo-ui-messageDialog-actions .oo-ui-actionWidget:last-child {
+	margin-right: 0;
 }
 .oo-ui-messageDialog-actions .oo-ui-actionWidget.oo-ui-labelElement .oo-ui-labelElement-label {
 	text-align: center;
@@ -2208,9 +2733,6 @@
 .oo-ui-processDialog-content .oo-ui-window-head {
 	height: 3.4em;
 }
-.oo-ui-processDialog-content .oo-ui-window-head.oo-ui-pendingElement-pending {
-	background-image: /* @embed */ url(themes/apex/images/textures/pending.gif);
-}
 .oo-ui-processDialog-content .oo-ui-window-body {
 	top: 3.4em;
 	box-shadow: 0 0 0.33em rgba(0, 0, 0, 0.33);
@@ -2249,12 +2771,24 @@
 .oo-ui-processDialog-actions-safe .oo-ui-actionWidget.oo-ui-buttonElement-framed,
 .oo-ui-processDialog-actions-primary .oo-ui-actionWidget.oo-ui-buttonElement-framed,
 .oo-ui-processDialog-actions-other .oo-ui-actionWidget.oo-ui-buttonElement-framed {
-	margin: 0.75em 0 0.75em 0.75em;
+	margin: 0.75em;
 }
 .oo-ui-processDialog-actions-safe .oo-ui-actionWidget.oo-ui-buttonElement-framed .oo-ui-buttonElement-button,
 .oo-ui-processDialog-actions-primary .oo-ui-actionWidget.oo-ui-buttonElement-framed .oo-ui-buttonElement-button,
 .oo-ui-processDialog-actions-other .oo-ui-actionWidget.oo-ui-buttonElement-framed .oo-ui-buttonElement-button {
 	padding: 0 1em;
+	vertical-align: middle;
+	margin: -1px;
+}
+.oo-ui-processDialog-actions-safe .oo-ui-actionWidget.oo-ui-buttonElement-frameless,
+.oo-ui-processDialog-actions-primary .oo-ui-actionWidget.oo-ui-buttonElement-frameless,
+.oo-ui-processDialog-actions-other .oo-ui-actionWidget.oo-ui-buttonElement-frameless {
+	margin: 0;
+}
+.oo-ui-processDialog-actions-safe .oo-ui-actionWidget.oo-ui-buttonElement-frameless .oo-ui-buttonElement-button,
+.oo-ui-processDialog-actions-primary .oo-ui-actionWidget.oo-ui-buttonElement-frameless .oo-ui-buttonElement-button,
+.oo-ui-processDialog-actions-other .oo-ui-actionWidget.oo-ui-buttonElement-frameless .oo-ui-buttonElement-button {
+	padding: 0.75em 1em;
 	vertical-align: middle;
 }
 .oo-ui-processDialog-actions-safe .oo-ui-actionWidget:hover,
@@ -2264,15 +2798,6 @@
 .oo-ui-processDialog-actions-safe .oo-ui-actionWidget:active,
 .oo-ui-processDialog-actions-primary .oo-ui-actionWidget:active {
 	background-color: rgba(0, 0, 0, 0.1);
-}
-.oo-ui-processDialog-actions-safe .oo-ui-actionWidget.oo-ui-buttonElement-framed,
-.oo-ui-processDialog-actions-primary .oo-ui-actionWidget.oo-ui-buttonElement-framed {
-	margin: 0.75em;
-}
-.oo-ui-processDialog-actions-safe .oo-ui-actionWidget.oo-ui-buttonElement-framed .oo-ui-buttonElement-button,
-.oo-ui-processDialog-actions-primary .oo-ui-actionWidget.oo-ui-buttonElement-framed .oo-ui-buttonElement-button {
-	/* Adjust for border so text aligns with title */
-	margin: -1px;
 }
 .oo-ui-processDialog-actions-safe .oo-ui-actionWidget.oo-ui-flaggedElement-progressive:hover,
 .oo-ui-processDialog-actions-primary .oo-ui-actionWidget.oo-ui-flaggedElement-progressive:hover {
@@ -2301,6 +2826,9 @@
 .oo-ui-processDialog-actions-safe .oo-ui-actionWidget.oo-ui-flaggedElement-destructive:active,
 .oo-ui-processDialog-actions-primary .oo-ui-actionWidget.oo-ui-flaggedElement-destructive:active {
 	background-color: rgba(212, 83, 83, 0.1);
+}
+.oo-ui-processDialog-actions-other .oo-ui-actionWidget.oo-ui-buttonElement {
+	margin-right: 0;
 }
 .oo-ui-processDialog > .oo-ui-window-frame {
 	min-height: 5em;
@@ -2359,11 +2887,9 @@
 .oo-ui-windowManager-modal > .oo-ui-dialog {
 	background-color: rgba(255, 255, 255, 0.5);
 	opacity: 0;
-	-webkit-transition: opacity 250ms ease-in-out;
-	   -moz-transition: opacity 250ms ease-in-out;
-	    -ms-transition: opacity 250ms ease-in-out;
-	     -o-transition: opacity 250ms ease-in-out;
-	        transition: opacity 250ms ease-in-out;
+	-webkit-transition: opacity 250ms ease;
+	   -moz-transition: opacity 250ms ease;
+	        transition: opacity 250ms ease;
 }
 .oo-ui-windowManager-modal > .oo-ui-dialog > .oo-ui-window-frame {
 	top: 1em;
@@ -2373,25 +2899,19 @@
 	-webkit-transform: scale(0.5);
 	   -moz-transform: scale(0.5);
 	    -ms-transform: scale(0.5);
-	     -o-transform: scale(0.5);
 	        transform: scale(0.5);
-	-webkit-transition: all 250ms ease-in-out;
-	   -moz-transition: all 250ms ease-in-out;
-	    -ms-transition: all 250ms ease-in-out;
-	     -o-transition: all 250ms ease-in-out;
-	        transition: all 250ms ease-in-out;
+	-webkit-transition: all 250ms ease;
+	   -moz-transition: all 250ms ease;
+	        transition: all 250ms ease;
 }
-.oo-ui-windowManager-modal > .oo-ui-dialog.oo-ui-window-ready {
-	/* Fade window overlay */
+.oo-ui-windowManager-modal > .oo-ui-dialog.oo-ui-window-setup {
 	opacity: 1;
 }
 .oo-ui-windowManager-modal > .oo-ui-dialog.oo-ui-window-ready > .oo-ui-window-frame {
-	/* Fade frame */
 	opacity: 1;
 	-webkit-transform: scale(1);
 	   -moz-transform: scale(1);
 	    -ms-transform: scale(1);
-	     -o-transform: scale(1);
 	        transform: scale(1);
 }
 .oo-ui-windowManager-modal.oo-ui-windowManager-floating > .oo-ui-dialog > .oo-ui-window-frame {
@@ -2400,9 +2920,6 @@
 	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.3);
 }
 
-.oo-ui-icon-circle {
-	background-image: /* @embed */ url(themes/apex/images/icons/circle.svg);
-}
 .oo-ui-icon-add {
 	background-image: /* @embed */ url(themes/apex/images/icons/add.svg);
 }
@@ -2412,11 +2929,14 @@
 .oo-ui-icon-alert {
 	background-image: /* @embed */ url(themes/apex/images/icons/alert.svg);
 }
+.oo-ui-icon-cancel {
+	background-image: /* @embed */ url(themes/apex/images/icons/cancel.svg);
+}
 .oo-ui-icon-check {
 	background-image: /* @embed */ url(themes/apex/images/icons/check.svg);
 }
-.oo-ui-icon-clear {
-	background-image: /* @embed */ url(themes/apex/images/icons/clear.svg);
+.oo-ui-icon-circle {
+	background-image: /* @embed */ url(themes/apex/images/icons/circle.svg);
 }
 .oo-ui-icon-close {
 	background-image: /* @embed */ url(themes/apex/images/icons/close.svg);
@@ -2439,6 +2959,17 @@
 .oo-ui-icon-help {
 	background-image: /* @embed */ url(themes/apex/images/icons/help-ltr.svg);
 }
+/* @noflip */
+.oo-ui-icon-help:lang(he) {
+	background-image: /* @embed */ url(themes/apex/images/icons/help-ltr.svg);
+}
+/* @noflip */
+.oo-ui-icon-help:lang(yi) {
+	background-image: /* @embed */ url(themes/apex/images/icons/help-ltr.svg);
+}
+.oo-ui-icon-history {
+	background-image: /* @embed */ url(themes/apex/images/icons/history.svg);
+}
 .oo-ui-icon-info {
 	background-image: /* @embed */ url(themes/apex/images/icons/info.svg);
 }
@@ -2448,8 +2979,11 @@
 .oo-ui-icon-next {
 	background-image: /* @embed */ url(themes/apex/images/icons/move-ltr.svg);
 }
+.oo-ui-icon-notice {
+	background-image: /* @embed */ url(themes/apex/images/icons/notice.svg);
+}
 .oo-ui-icon-picture {
-	background-image: /* @embed */ url(themes/apex/images/icons/picture.svg);
+	background-image: /* @embed */ url(themes/apex/images/icons/image.svg);
 }
 .oo-ui-icon-previous {
 	background-image: /* @embed */ url(themes/apex/images/icons/move-rtl.svg);
@@ -2458,7 +2992,7 @@
 	background-image: /* @embed */ url(themes/apex/images/icons/arched-arrow-ltr.svg);
 }
 .oo-ui-icon-remove {
-	background-image: /* @embed */ url(themes/apex/images/icons/remove.svg);
+	background-image: /* @embed */ url(themes/apex/images/icons/trash.svg);
 }
 .oo-ui-icon-search {
 	background-image: /* @embed */ url(themes/apex/images/icons/search.svg);
@@ -2479,6 +3013,9 @@
 .oo-ui-indicator-alert {
 	background-image: /* @embed */ url(themes/apex/images/indicators/alert.svg);
 }
+.oo-ui-indicator-clear {
+	background-image: /* @embed */ url(themes/apex/images/indicators/clear.svg);
+}
 .oo-ui-indicator-up {
 	background-image: /* @embed */ url(themes/apex/images/indicators/arrow-up.svg);
 }
@@ -2493,6 +3030,9 @@
 }
 .oo-ui-indicator-required {
 	background-image: /* @embed */ url(themes/apex/images/indicators/required.svg);
+}
+.oo-ui-indicator-search {
+	background-image: /* @embed */ url(themes/apex/images/indicators/search-ltr.svg);
 }
 
 .oo-ui-texture-pending {
