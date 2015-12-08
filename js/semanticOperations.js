@@ -80,7 +80,7 @@
     this.$element.append(this.dropdown.$element);
 
     this.button = new OO.ui.ButtonWidget( {
-        flags: ['constructive'],
+        flags: ['constructive', 'primary'],
         icon: 'add',
         classes: ['add']
     } );
@@ -113,8 +113,9 @@
     this.$element = $("<div>").addClass("syntactic-operations-selector");
 
     this.closer = new OO.ui.ButtonWidget({
-      icon: "close",
-      flags: ['destructive'],
+      icon: "remove",
+      framed: false,
+      flags: "destructive",
       classes: ["closer"]
     });
     this.$element.append(this.closer.$element);
@@ -209,7 +210,7 @@
     this.button = new OO.ui.ButtonWidget( {
         label: button_label,
         icon: 'add',
-        flags: ['constructive'],
+        flags: 'constructive',
         classes: ['add']
     } );
     this.$element.append(this.button.$element);
@@ -239,8 +240,9 @@
     this.$element.append(this.$action);
 
     this.closer = new OO.ui.ButtonWidget({
-      icon: "close",
-      flags: ['destrucive'],
+      icon: "remove",
+      framed: false,
+      flags: 'destructive',
       classes: ["closer"]
     });
     this.$element.append(this.closer.$element);

@@ -6,26 +6,27 @@ div.semantic-operations-selector {
 }
 
 div.semantic-meaning-selector {
-  position: relative;
+  white-space: nowrap;
+  text-align: center;
 }
 div.semantic-meaning-selector > .meanings {
-  margin-right: 1em;
-  margin-left: 0.8em;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  width: 20em;
 }
 div.semantic-meaning-selector > .meanings > span {
 }
 div.semantic-meaning-selector > .add {
-  position: absolute;
-  top: 0.5ex;
-  right: 0.5ex;
-  margin-right: 0.8em;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
 }
 
 div.syntactic-operations-selector {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  width: 30%;
   height: 15em;
   border: 1px solid silver;
   padding: 1em;
@@ -35,12 +36,13 @@ div.syntactic-operations-selector > .title {
   text-align: center;
   font-size: 1.2em;
   font-weight: bold;
-  margin-bottom: 1ex; 
+  margin-bottom: 1ex;
 }
 div.syntactic-operations-selector > .closer {
   position: absolute;
-  top: 0.5ex;
-  right: 0.5ex;
+  top: 0.5em;
+  right: 1em;
+  margin-right: 0px;
 }
 div.syntactic-operations-selector > .closer a {
   padding: 0px 1ex;
@@ -48,14 +50,17 @@ div.syntactic-operations-selector > .closer a {
 
 div.object-action-selector {
   position: relative;
+  white-space: nowrap;
 }
 div.object-action-selector > .objects,
 div.object-action-selector > .actions {
   display: inline-block;
+  vertical-align: middle;
   width: 10em;
 }
 div.object-action-selector > .add {
   margin: .25em 0px;
+  vertical-align: middle;
 }
 
 div.object-action {
@@ -68,8 +73,9 @@ div.object-action > .object,
 div.object-action > .action {
   display: inline-block;
   width: 9em;
+  padding: .75em 0em .75em 1em;
   margin-right: 1ex;
-  padding: .75em 1em;
+  border: 1px solid #eee;
 }
 div.object-action > .closer {
   position: absolute;
