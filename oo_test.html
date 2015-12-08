@@ -11,10 +11,10 @@
   <body>
     <script>
       var sos = new OO.ui.SemanticOperationsSelector({
-        meaningsLabel: "Reason for change",
-        meanings: ['Meaning1', 'Meaning2'],
-        objects: ['Object1', 'Object2'],
-        actions: ['Action1', 'Action2'],
+        meaningsLabel: "Semantic Intentions",
+        meanings: ['Link Disambiguation', 'Fact Update', 'Formatting', 'Verifiability', 'Cleanup', 'Vandalism', 'Neutral Point of View', 'Clarification', 'Elaboration', 'Copy Editing'],
+        objects: ['Wiki Link', 'Inter Wiki Link', 'External Link', 'Reference', 'Category', 'Header', 'Table', 'Image', 'Sentence', 'Word'],
+        actions: ['Deletion', 'Insertion', 'Modification'],
       })
       $('body').append(sos.$element)
 
