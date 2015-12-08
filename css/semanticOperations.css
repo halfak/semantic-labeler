@@ -1,3 +1,7 @@
+body {
+  min-height: 20em;
+}
+
 div.semantic-operations-selector {
 
 }
